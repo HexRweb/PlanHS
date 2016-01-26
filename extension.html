@@ -1,0 +1,544 @@
+<!DOCYPE html>
+<html>
+<head>
+  <script src="calender.js"></script>
+
+
+
+
+
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=.6">
+
+<style >
+  
+a {text-decoration: none; }
+
+html { 
+  background: url(back.jpg) no-repeat right center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-x: hidden;
+
+   
+    
+}
+
+ body {
+      background-color: ;
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+       max-width: 150%;
+
+
+    }
+ .banner {
+      position: relative;
+      display: inline-block;
+      width: 750px;
+      height: 75px;
+      vertical-align: top;
+     
+      margin-left: 10px;
+      margin-top: 10px;
+   
+      background-color:      #006170;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      float: center;
+}    
+ .banner2 {
+      position: relative;
+      display: inline-block;
+      width: 750px;
+      height: 50px;
+      vertical-align: top;
+      padding-top: 5px;
+      margin-left: 10px;
+   
+      background-color: #DEDFDF;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      float: center;
+} 
+.tab1 {
+      position: relative;
+      display: inline-block;
+      width: 35px;
+      height: 15px;
+      vertical-align: top;
+      padding-top: 10px;
+      padding-right: 10px;
+      margin-left: 10px;
+   
+      background-color:  #004c99;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      float: center;
+}    
+
+
+    
+    .dialog_orange {
+      position: relative;
+      display: inline-block;
+      width: 367.5px;
+      height: 50px;
+      vertical-align: top;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: #ff9005;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      float: left;
+
+}
+.font_orange{
+padding-left: 20px;
+padding-bottom: 15px;
+
+}
+  .dialog_white {
+      position: relative;
+      display: inline-block;
+      width: 367.5px;
+      height: 50px;
+      vertical-align: top;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: white;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      float: left;
+}
+
+  .dialog1 {
+      position: relative;
+      display: inline-block;
+      width: 367.5px;
+      height: 100px;
+      vertical-align: top;
+
+      padding-top: 20px;
+      background-color: #ff9005;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      float: left;
+}
+ 
+  
+    .dialog2{
+      position: relative;
+      display: inline-block;
+      width: 367.5px;
+      height: 100px;
+      vertical-align: top;
+      padding-top: 20px;
+      background-color: white;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      float: left;
+    }
+
+.dialog3{
+      position: relative;
+      display: inline-block;
+      width: 750px;
+      height: 600px;
+      vertical-align: top;
+      padding-top: 20px;
+      background-color: #008B8B;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+   .flash{
+    position: relative;
+    display: inline-block;
+   }
+    
+  div.move_right
+  {
+    padding-left: 15px;
+    padding-bottom: 10px;
+  }
+  
+    
+div.superman {
+  font-family: arial;
+  color: white;
+  font-size:70;
+  }
+img.float {
+  padding-top: 25px;
+
+  }
+
+
+h2.batman {
+  font-family: arial;
+  color:white;
+  font-size:10;
+  }
+h1.kalel {
+box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+h2.jorel {
+box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+img.boxShadow {
+box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+ img.right  
+{
+position: absolute;
+z-index: 10;
+top: 30px;
+left: 610px;
+}
+ div.right  
+{
+position: absolute;
+z-index: 10;
+top: 10px;
+left: 10px;
+}
+ div.right1  
+{
+position: absolute;
+z-index: 10;
+top: 10px;
+left: 5px;
+}
+
+
+
+</style>
+
+
+
+
+<body>
+
+
+
+<!--logo with image map-->
+<img class="right boxshadow" id="Image-Maps-Com-image-maps-2015-09-21-214935"  src="http://www.image-maps.com/m/private/0/0ecstt76nrp8sjb7u1cs83gmi3_westwood_hs_logo.jpg" border="0" width="150" height="125" orgWidth="252" orgHeight="179" usemap="#image-maps-2015-09-21-214935" align="right" alt="" />
+<map name="image-maps-2015-09-21-214935" id="ImageMapsCom-image-maps-2015-09-21-214935">
+<area  alt="" title="" href="http://westwood.roundrockisd.org/" shape="rect" coords="0,0,252,179" style="outline:none;" target="_blank"     />
+<area shape="rect" coords="250,177,252,179" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
+</map>
+
+<!--Top banner with logo-->
+<section>
+   <table cellspacing="5">
+    <tr>
+      <td>
+        <div class="banner">
+        <div class="right"><font size="30" face="Comic Sans MS" align="center" color="White">  PlanHS </font></div>
+
+             
+        
+        </div>
+         </td>
+       
+      
+
+     
+    </tr>
+      <tr>
+        <td>
+
+<!--menu tab with all the blocks-->
+<div class="banner2">
+<table cellspacing="0">
+<tr>
+<td>
+<div class="tab1 move_right"><a href="1.html" style="text-decoration:none"><font color="silver" size="2.5" align="center"><b>1st</b></font></a></div>
+</td>
+<td>
+<div class="tab1 move_right"><a href="2.html"><font color="silver" size="2.5" align="center" ><b>2nd</b></font></a></div>
+</td>
+<td>
+<div class="tab1 move_right"><a href="3.html"><font color="silver" size="2.5" ><b>3rd</b></font></a></div>
+</td>
+<td>
+<div class="tab1 move_right"><a href="4.html"><font color="silver" size="2.5" ><b>4th</b></font></a></div>
+</td>
+<td>
+<div class="tab1 move_right"><a href="5.html"><font color="silver" size="2.5" ><b>5th</b></font></a></div>
+</td>
+<td>
+<div class="tab1 move_right"><a href="6.html"><font color="silver" size="2.5" ><b>6th</b></font></a></div>
+</td>
+<td>
+<div class="tab1 move_right"><a href="7.html"><font color="silver" size="2.5" ><b>7th</b> </font></a></div>
+</td>
+<td>
+<div class="tab1 move_right"><a href="8.html"><font color="silver" size="2.5" ><b>8th</b></font></a></div>
+
+        </td>
+      </tr>
+
+  </table>
+</table>
+</section>
+
+
+<!--Tablw with every single block box-->
+
+ <table cellspacing="15" >
+ <tr>
+ <td>
+ <div class="dialog_orange"> 
+
+
+<!--Orange-->
+
+   <font align="center" face="verdana" size="8" color="white" class="font_orange"><b>Orange Day<b></font>
+ </div>
+ </td>
+ <td>
+
+ <div class="dialog_white">
+ 
+
+<!--White-->
+
+   <font align="center" face="verdana" size="8" color="orange" class="font_orange"><b>White Day<b></font>
+   </td>
+ </tr>
+ <!--1st Block-->
+<tr>
+  <td>
+     <div class="dialog1">
+        <div class="right1"><font face="verdana" color="white"><b>1st Block <b></font>
+          <hr color="white" >
+         <div align="center">
+                  <p id ="demoT"></p>
+
+
+        </div>
+
+        </div>
+ </td>
+
+
+<!-- 5th Block-->
+ <td>
+     <div class="dialog2">
+     <div class="right1"><font><font face="verdana" color="orange"><b>5th Block </b></font></div>
+   
+    <hr color="orange" >
+  
+ </td>
+ </tr>
+
+<!--2nd Block-->
+<tr>
+  <td>
+      <div class="dialog1">
+        
+        <div class="right1"><font face="verdana" color="white"><b>2nd Block <b></font></div>
+         <hr color="white" >    
+        <div align="center"></div>
+  </td>
+
+ 
+  <td>
+       <div class="dialog2"> 
+        <div class="right1"><font face="verdana" color="orange"><b>6th Block</b></font></div>
+    <hr color="orange" >
+   
+  </td>
+ </tr>
+ 
+
+<!--3rd Block-->
+
+<tr>
+  <td>
+    <div class="dialog1"> 
+    <div class="right1"><font face="verdana" color="white"><b>3rd Block <b></font></div>
+    <hr color="white" >
+    <div align="center"></div>
+ </td>
+ 
+<!--7th Block-->
+
+  <td>
+     <div class="dialog2">  
+          <div class="right1"> <font face="verdana" color="orange"><b>7th Block <b></font></a></div>
+          <hr color="orange" >
+            
+    </div>
+  </td>
+ </tr>
+ 
+<!--4th Block-->
+
+
+ <tr>
+  <td>
+       <div class="dialog1">
+          <div class="right1"><font face="verdana" color="white"><b>4th Block<b></font></div>
+            <hr color="white" >
+             <div align="center"></div>
+  </td>
+
+<!--8th Block-->
+
+  <td>
+       <div class="dialog2">
+        <div class="right1"> <font face="verdana" color="orange"><b>8th Block <b></font></a></div>
+            <hr color="orange" >
+                <div align="center"></div>
+  </td>
+</tr>
+ 
+</table>
+ 
+
+
+
+<!--Google Calender-->
+
+ <table cellspacing="20">
+    <tr>
+     <td>
+        <div>
+        <p id ="demo"></p></div>
+     </td>
+    </tr>
+
+
+ <!--Helpful Links Card-->
+    <tr>
+     <td>
+        
+            <font face="verdana" color="white" size="5"> <b>Helpful Links<b></font>
+            <hr color="orange">
+            <hr color="white">
+        
+        <table align="center">
+        <tr>
+          <td>
+                <!--Khan Academy-->
+                  <a href="https://www.khanacademy.org/" target="_blank">
+                  <img src="https://yt3.ggpht.com/-Sxo3Mp6e4Bg/AAAAAAAAAAI/AAAAAAAAAAA/vL4onTqTcjU/s900-c-k-no/photo.jpg" alt="Khan Academy" style="width:150px;height:150px;border:0" class="everything"></a>
+          </td>
+        
+         <td>
+                <!--Google Classroom-->
+                <a href="https://classroom.google.com/ineligible" target="_blank">
+                <img src="http://www.alicekeeler.com/teachertech/wp-content/uploads/2014/12/Google-Classroom-Logo1.png" alt="Google Classroom" style="width:150px;height:150px;border:0" class="everything"></a>
+          </td>
+          
+          <td>
+                <!--H.A.C.-->
+                <a href="https://accesscenter.roundrockisd.org/HomeAccess/Account/LogOn?ReturnUrl=%2fHomeAccess%2fHome%2fWeekView" target="_blank">
+                <img src="images/hac.jpg" alt="Home Access Center" style="width:150px;height:150px;border:0" class="everything">
+          </td>
+          
+         
+          <td>
+                <!--SparkNotes-->
+                <a href="http://www.sparknotes.com/" target="_blank">
+                <img src="https://pbs.twimg.com/profile_images/2136503694/sn-logo_400x400.jpg" alt="Spark Notes" style="width:150px;height:150px;border:0" class="everything"> </a> 
+          </td>
+        </tr>
+        
+        <tr>
+           <td>
+              <!--Google Drive-->
+             <a href="https://www.google.com/drive/" target="_blank">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Logo_of_Google_Drive.svg/2000px-Logo_of_Google_Drive.svg.png" alt="Google Drive" style="width:150px;height:150px;border:0" class="everything"></a>
+          </td>
+          
+          <td>
+                <!--R.R.I.S.D.-->
+                <a href="https://roundrockisd.org/" target="_blank">
+                <img src="http://www.newsradioklbj.com/sites/g/files/exi641/f/styles/large_730/public/article-images-featured/475981-135771.jpg?itok=nwiSPn-s" alt="Round Rock I.S.D." style="width:150px;height:150px;border:0" class="everything"></a> 
+          </td>
+          
+          <td>
+              <!--Google Keep-->
+              <a href="https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&continue=https://keep.google.com/&followup=https://keep.google.com/&ltmpl=keep" target="_blank">
+              <img src="http://www.google.com/images/icons/product/keep-512.png" alt="Round Rock I.S.D." style="width:150px;height:150px;border:0" class="everything"></a>
+          </td>
+          
+          <td>
+              <!--Quizlet-->
+              <a href="https://quizlet.com/latest" target="_blank">
+              <img src="https://quizlet.com/a/i/icons/512.HKw8.jpg" alt="Quizlet" style="width:150px;height:150px;border:0" class="everything"></a>
+          </td>
+          
+        </tr>
+
+
+        <tr>
+         
+
+           <td>
+                <!--Shmoop-->
+               <a href="http://www.shmoop.com/" target="_blank">
+               <img src="http://www.ouhsd.k12.ca.us/wp-content/uploads/2012/06/shmoop.jpg" alt="Shmoop" style="width:150px;height:150px;border:0" class="everything"></a>
+          </td>
+
+         
+          <td>
+             <!--Schoology-->
+             <a href="https://www.schoology.com/home.php" target="_blank">
+             <img src="https://lh5.ggpht.com/axIklObGu4UbQoUf_qE3f_O3b8zQ_gHCgthgSl-CRAdaT9P1vrB2ALZ2W8a2PQXSf-I=w300" alt="Schoology" style="width:150px;height:150px;border:0" class="everything"></a>
+      
+          </td>
+          
+          <td>
+              <!--Westwood Student Links-->
+              <a href="http://westwood.roundrockisd.org/students/" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/en/5/55/Westwood_HS_Logo.jpg" alt="Westwood Student Links" style="width:150px;height:150px;border:0" class="everything">
+          </td>
+          
+          <td>
+              <!--Chrome Web Store-->
+              <a href="https://support.google.com/calendar/answer/41207?hl=en" target="_blank">
+              <img src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/calendar-icon.png" style="width:150px;height:150px;border:0" class="everything">
+          </td>
+        </tr>
+          
+      
+
+          
+
+          </table>
+         
+     </table>
+
+
+
+
+
+<textarea id="saveLine"><iframe src="https://www.google.com/calendar/embed?src=%40gmail.com&ctz=America/Chicago" align="center" style="border: 0" width="750" height="600" frameborder="10" scrolling="no" position="relative" class="everything"></iframe></textarea>
+
+<br>
+<input type="button" id="save" value="Save ine">
+<input type="button" id="get" value="Get Saved Line">
+
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+<!--notes textarea-->
+<textarea></textarea>
+
+<input type="button" id="yeah" value=" Save Line">
+<input type="button" id="yeash" value="Get Saved Line">
+
+</html>
+<!--<iframe src="https://www.google.com/calendar/embed?src=swarnwhs%40gmail.com&ctz=America/Chicago" align="center" style="border: 0" width="750" height="600" frameborder="10" scrolling="no" position="relative" class="everything"></iframe>
