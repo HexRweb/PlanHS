@@ -20,7 +20,7 @@
 				<tr>
 					<td>
 						<div class="banner">
-							<div class="right"><a href="extension.html"><font size="30" face="Comic Sans MS" align="center" color="White">  PlanHS </font></a></div>
+							<div class="right"><a href="extension.html"><font size="30" face="Comic Sans MS" align="center" color="White">  PlanHS </font></a><a id="settings" href="settings.html" style="float:right;">Settings</a></div>
 						</div>
 					</td>
 				</tr>
@@ -45,10 +45,65 @@
 				</tr>
 			</table>
 		</section>
+		<div id="settings-container">
+			<h1 class='white'>Settings</h1>
+			<p class='settings-description white'>Here's a list of data we get from you, and the values we have stored for them. Click the save button to save <strong>all</strong> the settings.</p>
+			<div class='block-container'>
+				<a class='white'>Block 1 teacher website</a>
+				<textarea class='settings-option block-1 settings-url' id='block-1-url'></textarea>
+				<a class='white'>Block 1 notes</a>
+				<textarea class='settings-option block-1 settings-url' id='block-1-notes'></textarea>
+			</div>
+			<div class='block-container'>
+				<a class='white'>Block 2 teacher website</a>
+				<textarea class='settings-option block-2 settings-url' id='block-2-url'></textarea>
+				<a class='white'>Block 2 notes</a>
+				<textarea class='settings-option block-2 settings-url' id='block-2-notes'></textarea>
+			</div>
+			<div class='block-container'>
+				<a class='white'>Block 3 teacher website</a>
+				<textarea class='settings-option block-3 settings-url' id='block-3-url'></textarea>
+				<a class='white'>Block 3 notes</a>
+				<textarea class='settings-option block-3 settings-url' id='block-3-notes'></textarea>
+			</div>
+			<div class='block-container'>
+				<a class='white'>Block 4 teacher website</a>
+				<textarea class='settings-option block-4 settings-url' id='block-4-url'></textarea>
+				<a class='white'>Block 4 notes</a>
+				<textarea class='settings-option block-4 settings-url' id='block-4-notes'></textarea>
+			</div>
+			<div class='block-container'>
+				<a class='white'>Block 5 teacher website</a>
+				<textarea class='settings-option block-5 settings-url' id='block-5-url'></textarea>
+				<a class='white'>Block 5 notes</a>
+				<textarea class='settings-option block-5 settings-url' id='block-5-notes'></textarea>
+			</div>
+			<div class='block-container'>
+				<a class='white'>Block 6 teacher website</a>
+				<textarea class='settings-option block-6 settings-url' id='block-6-url'></textarea>
+				<a class='white'>Block 6 notes</a>
+				<textarea class='settings-option block-6 settings-url' id='block-6-notes'></textarea>
+			</div>
+			<div class='block-container'>
+				<a class='white'>Block 7 teacher website</a>
+				<textarea class='settings-option block-7 settings-url' id='block-7-url'></textarea>
+				<a class='white'>Block 7 notes</a>
+				<textarea class='settings-option block-7 settings-url' id='block-7-notes'></textarea>
+			</div>
+			<div class='block-container'>
+				<a class='white'>Block 8 teacher website</a>
+				<textarea class='settings-option block-8 settings-url' id='block-8-url'></textarea>
+				<a class='white'>Block 8 notes</a>
+				<textarea class='settings-option block-8 settings-url' id='block-8-notes'></textarea>
+			</div>
+			<p style='align:center; text-align:center;'><button id='save-settings'>Save ALL Settings</button></p>
+		</div>
 		<p id ="demo"></p>
-		<p class="white">To display the webpage, paste the link of your teachers website in the source section of link below :</p>
-		<textarea id="saveLine"><iframe id="cool" src="" width="750" height="725"></iframe></textarea>
-		<!--<a class="white">To display the webpage, paste the link of your teachers website in the source section of link below :</a>!-->
-		<input type="button" id="save" value="Update Line">
+		<div class="teacher-url">
+			<p class="white">To display the webpage, paste the link of your teachers website in the source section of link below :</p>
+			<textarea id="saveLine"></textarea>
+			<!--<a class="white">To display the webpage, paste the link of your teachers website in the source section of link below :</a>!-->
+			<input type="button" id="save" value="Save URL">
+		</div>
 	</body>
 </html>

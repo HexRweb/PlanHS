@@ -7,12 +7,60 @@ $(document).ready(function()
 		$(this).addClass("main").removeClass("tab1");
 		var block = $(this).children().attr("href").split(".html")[0];
 		setFrame(get(block));
+		$(".teacher-url").css("display","block");
+		$("#settings-container").css("display","none");
 	});
 	$("#save").click(function()
 	{
 		var block = $(".block-selector.main").children().attr("href").split(".html")[0];
 		set(block, $(this).val());
+		toast("Saved",2500);
+		debugger;
 		setFrame(get(block));
+	});
+	$("#save-settings").click(function()
+	{
+		set("1-url",$("#block-1-url").val());
+		set("1-notes",$("#block-1-notes").val());
+		set("2-url",$("#block-2-url").val());
+		set("2-notes",$("#block-2-notes").val());
+		set("3-url",$("#block-3-url").val());
+		set("3-notes",$("#block-3-notes").val());
+		set("4-url",$("#block-4-url").val());
+		set("4-notes",$("#block-4-notes").val());
+		set("5-url",$("#block-5-url").val());
+		set("5-notes",$("#block-5-notes").val());
+		set("6-url",$("#block-6-url").val());
+		set("6-notes",$("#block-6-notes").val());
+		set("7-url",$("#block-7-url").val());
+		set("7-notes",$("#block-7-notes").val());
+		set("8-url",$("#block-8-url").val());
+		set("8-notes",$("#block-8-notes").val());
+		toast("All settings updated",2500);
+	});
+	$("#settings").click(function(e)
+	{
+		e.preventDefault();
+		$("#demo").html("");
+		$(".teacher-url").css("display","none");
+		$("#settings-container").css("display","block");
+		$(".main").removeClass("main").addClass("tab1");
+		$("#block-1-url").val(get(1));
+		$("#block-1-notes").val(get(1,"notes"));
+		$("#block-2-url").val(get(2));
+		$("#block-2-notes").val(get(2,"notes"));
+		$("#block-3-url").val(get(3));
+		$("#block-3-notes").val(get(3,"notes"));
+		$("#block-4-url").val(get(4));
+		$("#block-4-notes").val(get(4,"notes"));
+		$("#block-5-url").val(get(5));
+		$("#block-5-notes").val(get(5,"notes"));
+		$("#block-6-url").val(get(6));
+		$("#block-6-notes").val(get(6,"notes"));
+		$("#block-7-url").val(get(7));
+		$("#block-7-notes").val(get(7,"notes"));
+		$("#block-8-url").val(get(8));
+		$("#block-8-notes").val(get(8,"notes"));
 	});
 	setFrame(get(1));
 });
@@ -31,14 +79,15 @@ function setFrame(url)
 	$("#saveLine").val(url);
 }
 
-function get(what)
+function get(which,what)
 {
-	return "https://google.com/" + what; // testing only
+	if(what === "notes")
+		return which + " notes";
+	return "https://google.com/" + which; // testing only; returns 404 with pathname.
 }
 
 function set(what,value)
 {
-	toast("Saved",5000)
 	return true;
 }
 
