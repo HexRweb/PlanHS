@@ -15,7 +15,6 @@ $(document).ready(function()
 		var block = $(".block-selector.main").children().attr("href").split(".html")[0];
 		set(block, $(this).val());
 		toast("Saved",2500);
-		debugger;
 		setFrame(get(block));
 	});
 	$("#save-settings").click(function()
@@ -36,6 +35,7 @@ $(document).ready(function()
 		set("7-notes",$("#block-7-notes").val());
 		set("8-url",$("#block-8-url").val());
 		set("8-notes",$("#block-8-notes").val());
+		set("calendarID",$("#calendar-username").val());
 		toast("All settings updated",2500);
 	});
 	$("#settings").click(function(e)
@@ -61,6 +61,7 @@ $(document).ready(function()
 		$("#block-7-notes").val(get(7,"notes"));
 		$("#block-8-url").val(get(8));
 		$("#block-8-notes").val(get(8,"notes"));
+		$("#calendar-username").val(get(-1,"calendarID"));
 	});
 	setFrame(get(1));
 });
@@ -83,6 +84,8 @@ function get(which,what)
 {
 	if(what === "notes")
 		return which + " notes";
+	if(what == "calendarID")
+		return "test";
 	return "https://google.com/" + which; // testing only; returns 404 with pathname.
 }
 
