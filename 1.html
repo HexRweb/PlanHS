@@ -4,23 +4,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=.6">
 
-<style >
-  
+<style >html { background: url(images/back.jpg) no-repeat right center fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;overflow-x: hidden; margin-left: -2.5px;}
 
-a {text-decoration: none; }
+ a {text-decoration: none; }
 
-html { 
-  background: url(back.jpg) no-repeat right center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow-x: hidden;
-
-   
-    
-}
-
+ 
  body {
       background-color: ;
       font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
@@ -43,8 +31,9 @@ html {
      
       margin-left: 10px;
       margin-top: 10px;
+
    
-      background-color:      #006170;
+      background-color: #006170;
       box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
       float: center;
 }    
@@ -55,27 +44,13 @@ html {
       height: 50px;
       vertical-align: top;
       padding-top: 5px;
+      padding-bottom: 10px;
       margin-left: 10px;
    
       background-color: #DEDFDF;
       box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
       float: center;
 } 
-.main {
-      position: relative;
-      display: inline-block;
-      width: 35px;
-      height: 15px;
-      vertical-align: top;
-      padding-top: 10px;
-      padding-right: 10px;
-      margin-left: 10px;
-   
-      background-color:  #004c99;
-      box-shadow: 0 12px 15px 0  rgba(0,0,0, 0.7);
-      float: center;
-    }
-
 .tab1 {
       position: relative;
       display: inline-block;
@@ -87,17 +62,31 @@ html {
       margin-left: 10px;
    
       background-color:  #004c99;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);  
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
       float: center;
 }    
-
+.tab1right {
+      position: relative;
+      display: inline-block;
+      width: 70px;
+      height: 35px;
+      vertical-align: top;
+      padding-top: 10px;
+      padding-left: 10px;
+      margin-left: 450px;
+      margin-top: 10px;
+   
+      background-color:  #004466;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      float: center;
+}  
 
     
     .dialog_orange {
       position: relative;
       display: inline-block;
       width: 367.5px;
-      height: 50px;
+      height: 20px;
       vertical-align: top;
       padding-top: 20px;
       padding-bottom: 20px;
@@ -107,7 +96,7 @@ html {
 
 }
 .font_orange{
-padding-left: 20px;
+padding-left: 50px;
 padding-bottom: 15px;
 
 }
@@ -115,7 +104,7 @@ padding-bottom: 15px;
       position: relative;
       display: inline-block;
       width: 367.5px;
-      height: 50px;
+      height: 20px;
       vertical-align: top;
       padding-top: 20px;
       padding-bottom: 20px;
@@ -128,7 +117,7 @@ padding-bottom: 15px;
       position: relative;
       display: inline-block;
       width: 367.5px;
-      height: 100px;
+      height: 110px;
       vertical-align: top;
 
       padding-top: 20px;
@@ -142,7 +131,7 @@ padding-bottom: 15px;
       position: relative;
       display: inline-block;
       width: 367.5px;
-      height: 100px;
+      height: 110px;
       vertical-align: top;
       padding-top: 20px;
       background-color: white;
@@ -161,23 +150,6 @@ padding-bottom: 15px;
       box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
     }
 
-   .flash{
-    position: relative;
-    display: inline-block;
-   }
-    
-  div.move_right
-  {
-    padding-left: 15px;
-    padding-bottom: 10px;
-  }
-  
-    
-div.superman {
-  font-family: arial;
-  color: white;
-  font-size:70;
-  }
 img.float {
   padding-top: 25px;
 
@@ -196,7 +168,7 @@ h2.jorel {
 box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
 }
 img.boxShadow {
-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+box-shadow: 12px 12px 12px 12px rgba(0, 0, 0, 0.40);
 }
 
 
@@ -204,7 +176,7 @@ box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
 {
 position: absolute;
 z-index: 10;
-top: 30px;
+top: 35px;
 left: 610px;
 }
  div.right  
@@ -213,8 +185,21 @@ position: absolute;
 z-index: 10;
 top: 10px;
 left: 10px;
+right: 20;
 }
- div.right1  
+div.right20  
+{
+margin-left: 10px;
+}
+ div.right2  
+{
+position: absolute;
+z-index: 10;
+top: 10px;
+left: 45px;
+}
+
+div.right1  
 {
 position: absolute;
 z-index: 10;
@@ -222,8 +207,58 @@ top: 10px;
 left: 5px;
 }
 
+
+p.color1
+{
+  color:white;
+}
+
+p.color2
+{
+  color:orange;
+}
+.button {
+background-color: teal;
+border: none;
+height: 30px;
+width: 75px;
+}
+
+.button1 {
+background-color: teal;
+border: none;
+height: 35px;
+width: 150px;
+align: right;
+}
+
+.button2 {
+background-color:  #004080;
+border: none;
+width: 58px;
+height: 35px;
+}
+
+.button3 {
+background-color:  #007399;
+border: none;
+width: 58px;
+height: 35px;
+}
+
+.button4{
+  background-color:  #004080;
+border: none;
+width: 58px;
+height: 35px;
+ box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.8);
+
+}
+
+
 </style>
 
+<p id="updateImg"></p>
 
 
 
@@ -231,12 +266,10 @@ left: 5px;
 
 
 
-<!--logo with image map-->
-<img class="right boxshadow" id="Image-Maps-Com-image-maps-2015-09-21-214935"  src="http://www.image-maps.com/m/private/0/0ecstt76nrp8sjb7u1cs83gmi3_westwood_hs_logo.jpg" border="0" width="150" height="125" orgWidth="252" orgHeight="179" usemap="#image-maps-2015-09-21-214935" align="right" alt="" />
-<map name="image-maps-2015-09-21-214935" id="ImageMapsCom-image-maps-2015-09-21-214935">
-<area  alt="" title="" href="http://westwood.roundrockisd.org/" shape="rect" coords="0,0,252,179" style="outline:none;" target="_blank"     />
-<area shape="rect" coords="250,177,252,179" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
-</map>
+<!--logo -->
+ <a href="westwood.html" ><img class="right boxshadow"  src="images/Westwood_HS_Logo.jpg" border="0" width="150" height="125"  align="right" alt="" /></a>
+
+
 
 <!--Top banner with logo-->
 <section>
@@ -244,7 +277,11 @@ left: 5px;
     <tr>
       <td>
         <div class="banner">
-        <div class="right"><a href="extension.html"><font size="30" face="Comic Sans MS" align="center" color="White">  PlanHS </font></a></div>
+        <div class="right"><a href="extension.html"><font size="30" face="Trebuchet MS"  align="center" color="White">  PlanVIEW </font></a></div>
+
+
+
+        
 
         
         </div>
@@ -259,31 +296,35 @@ left: 5px;
 
 <!--menu tab with all the blocks-->
 <div class="banner2">
-<table cellspacing="0">
+<table cellspacing="5">
 <tr>
 <td>
-<div class="main move_right"><a href="1.html"><font color="silver" size="2.5" align="center"><b>1st</b></font></a></div>
+<a href="1.html" ><button class="button4"><font color="#E0E0E0" size="2.5" align="center"><b>1st</b></font></button></a>
 </td>
 <td>
-<div class="tab1 move_right"><a href="2.html"><font color="silver" size="2.5" align="center" ><b>2nd</b></font></a></div>
+<a href="2.html"><button class="button2"><font color="#E0E0E0" size="2.5" align="center" ><b>2nd</b></font></button></a>
 </td>
 <td>
-<div class="tab1 move_right"><a href="3.html"><font color="silver" size="2.5" ><b>3rd</b></font></a></div>
+<a href="3.html"><button class="button2"><font color="#E0E0E0" size="2.5" ><b>3rd</b></font></button></a>
 </td>
 <td>
-<div class="tab1 move_right"><a href="4.html"><font color="silver" size="2.5" ><b>4th</b></font></a></div>
+<a href="4.html"><button class="button2"><font color="#E0E0E0" size="2.5" ><b>4th</b></font></button></a>
 </td>
 <td>
-<div class="tab1 move_right"><a href="5.html"><font color="silver" size="2.5" ><b>5th</b></font></a></div>
+<a href="5.html"><button class="button2"><font color="#E0E0E0" size="2.5" ><b>5th</b></font></button></a>
 </td>
 <td>
-<div class="tab1 move_right"><a href="6.html"><font color="silver" size="2.5" ><b>6th</b></font></a></div>
+<a href="6.html"><button class="button2"><font color="#E0E0E0" size="2.5" > <b>6th</b></font></button></a>
 </td>
 <td>
-<div class="tab1 move_right"><a href="7.html"><font color="silver" size="2.5" ><b>7th</b> </font></a></div>
+<a href="7.html"><button class="button2"><font color="#E0E0E0" size="2.5" ><b>7th</b> </font></button></a>
 </td>
 <td>
-<div class="tab1 move_right"><a href="8.html"><font color="silver" size="2.5" ><b>8th</b></font></a></div>
+<a href="8.html"><button class="button2"><font color="#E0E0E0" size="2.5" ><b>8th</b></font></button></a>
+<td>
+<a href="howto.html"><button class="button3"><font color="#E0E0E0" size="2" ><b>Setup Help<b></font></button></a>
+
+</td>
 
         </td>
       </tr>
@@ -302,19 +343,50 @@ left: 5px;
 
 
 
+<div class="right20"><p id ="demo" class="over"></p></div>
 
 
-<p id ="demo"></p>
+<section align="center">
+<br>
+<br>
+<br>
 
-<p color="white">To display the webpage, paste the link of your teachers website in the source section of link below :</p>
+<hr color="white">
+<hr color="teal">
+<font color="white" size="5" face="Trebuchet MS" align="center"><b>Embed Teacher's Website<b></font>
+<hr color="teal">
+<hr color="white">
+<br>
+<br>
+<br>
+
+<font color="white" size="3" face="Trebuchet MS" >Paste link of your teacher's website below.Click Store Website.Click Show Website.</font>
+<br>
+<br>
+<br>
+<table cellspacing="2" align="center">
+<tr>
+<td>
+<textarea id="saveLine" cols="25" ></textarea>
+</td>
+<td>
+<button id="save" class="button1"><font color="white" face="Trebuchet MS">Store website </font></button>
+</td>
+<td>
+<button id="get" class="button1"><font color="white" face="Trebuchet MS">Show website</font></button>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+<br>
 
 
-<textarea id="saveLine"><iframe id="cool" src="" width="750" height="725"></iframe></textarea>
-
-<font color="white">To display the webpage, paste the link of your teachers website in the source section of link below :</p>
 
 
-<input type="button" id="save" value=" Save Line">
-<input type="button" id="get" value="Get Saved Line">
+
+
+</section>
 
 </html>

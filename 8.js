@@ -2,18 +2,22 @@ window.onload = function(){
 
 	function updateDemo(what)
 	{
-		document.getElementById("demo").innerHTML = what.eight;
+		document.getElementById("demo").innerHTML = what.total8;
 	}	
 	
 
-	document.getElementById('demo').innerHTML = chrome.storage.sync.get("eight",updateDemo);
+	document.getElementById('demo').innerHTML = chrome.storage.sync.get("total8",updateDemo);
 
 	document.getElementById('save').onclick = function() {
 
-		var eight = document.getElementById('saveLine').value;
+		var eigth = document.getElementById('saveLine').value;
 //alert(value);
+	var a8 ='<iframe id="cool" src="';
+	var b8 = '" width="750" height="725"></iframe>';
 
-				chrome.storage.sync.set({'eight': eight}, function() {
+
+var total8 = a8 + eigth + b8;
+				chrome.storage.sync.set({'total8': total8}, function() {
           		// Notify that we saved
           			alert('Settings saved');
        			 });
@@ -22,23 +26,42 @@ window.onload = function(){
 
 				document.getElementById('get').onclick = function() {
 
-					chrome.storage.sync.get('eight',updateDemo);
+					chrome.storage.sync.get('total8',updateDemo);
 
 				}
 
-		 function registerPostMessageHandler() {
-            // Listen to message from child window
-            var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-            var eventer = window[eventMethod];
-            var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+//Bacjgroudn Image
 
-            eventer(messageEvent,function(e) {
-                var key = e.message ? "message" : "data";
-                var data = e[key];
-                console.log("Message obtained from origin " + e.origin + ' data: ' + data);
+	function updateJpg(whi)
+	{
+		document.getElementById("updateImg").innerHTML = whi.totalImg;
+	}	
+	
 
-                //Insert an AD slot based on the message
-            },false);
-        }
+	document.getElementById('updateImg').innerHTML = chrome.storage.sync.get("totalImg",updateJpg);
+
+	document.getElementById('up').onclick = function() {
+
+        var alpha = '<style>html { background: url(';
+		var back = document.getElementById('saveLine4').value;
+		var beta = ') no-repeat right center fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;overflow-x: hidden; margin-left: -2.5px; } </style>';
+		var totalImg = alpha + back + beta;
+//alert(value);
+	
+				chrome.storage.sync.set({'totalImg': totalImg}, function() {
+          		// Notify that we saved
+//          			alert('Settings saved');
+       			 });
+
+			};
+
+				document.getElementById('load').onclick = function() {
+
+					chrome.storage.sync.get('totalImg',updateJpg);
+
+				}
+
+
+
 
 	}
