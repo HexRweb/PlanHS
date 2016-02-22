@@ -290,7 +290,140 @@ var total = a + calender + b;
 
 				}
 
+//Link1
 
+	function linkU1(whos)
+	{
+		document.getElementById("link1").innerHTML = whos.combine;
+	}	
+	
+
+	document.getElementById('link1').innerHTML = chrome.storage.sync.get("combine",linkU1);
+
+	document.getElementById('savefm1').onclick = function() {
+
+
+		var aplha2 = ' <a href="';
+		var beta2 = '" target="_blank"><button class="button6 button60"><font color="white" size="5">Link 1</font></button></a>';
+		var links = document.getElementById('saveLine10').value;
+
+		var combine = aplha2 + links + beta2;
+//alert(value);
+	
+				chrome.storage.sync.set({'combine': combine}, function() {
+          		// Notify that we saved
+//          			alert('Settings saved');
+       			 });
+
+			};
+
+				document.getElementById('getfm').onclick = function() {
+
+					chrome.storage.sync.get('combine',linkU1);
+
+				}
+
+
+
+//Link2
+
+	function linkU2(whos)
+	{
+		document.getElementById("link2").innerHTML = whos.combine2;
+	}	
+	
+
+	document.getElementById('link2').innerHTML = chrome.storage.sync.get("combine2",linkU2);
+
+	document.getElementById('savefm2').onclick = function() {
+
+
+		var aplha3 = ' <a href="';
+		var beta3 = '" target="_blank"><button class="button4 button40"><font color="teal" size="5">Link 2</font></button></a>';
+		var links1 = document.getElementById('saveLine10').value;
+
+		var combine2 = aplha3 + links1 + beta3;
+//alert(value);
+	
+				chrome.storage.sync.set({'combine2': combine2}, function() {
+          		// Notify that we saved
+//          			alert('Settings saved');
+       			 });
+
+			};
+
+				document.getElementById('getfm').onclick = function() {
+
+					chrome.storage.sync.get('combine2',linkU2);
+
+				}
+
+//Link 3
+
+	function linkU3(whos)
+	{
+		document.getElementById("link3").innerHTML = whos.combine3;
+	}	
+	
+
+	document.getElementById('link3').innerHTML = chrome.storage.sync.get("combine3",linkU3);
+
+	document.getElementById('savefm3').onclick = function() {
+
+
+		var aplha4 = ' <a href="';
+		var beta4 = '" target="_blank"> <button class="button6 button60"><font color="white" size="5">Link 3</button> </a>';
+		var links2 = document.getElementById('saveLine10').value;
+
+		var combine3 = aplha4 + links2 + beta4;
+//alert(value);
+	
+				chrome.storage.sync.set({'combine3': combine3}, function() {
+          		// Notify that we saved
+//          			alert('Settings saved');
+       			 });
+
+			};
+
+				document.getElementById('getfm').onclick = function() {
+
+					chrome.storage.sync.get('combine3',linkU3);
+
+				}
+//Link 4
+
+	function linkU4(whos)
+	{
+		document.getElementById("link4").innerHTML = whos.combine4;
+	}	
+	
+
+	document.getElementById('link4').innerHTML = chrome.storage.sync.get("combine4",linkU4);
+
+	document.getElementById('savefm4').onclick = function() {
+
+		
+
+
+		var aplha5 = ' <a href="';
+		var beta5 = '" target="_blank"><button class="button4 button40"><font color="teal" size="5">Link 4</font></button></a>';
+		var links3 = document.getElementById('saveLine10').value;
+
+		var combine4 = aplha5 + links3 + beta5;
+//alert(value);
+	
+				chrome.storage.sync.set({'combine4': combine4}, function() {
+          		// Notify that we saved
+//          			alert('Settings saved');
+       			 });
+
+			};
+
+				document.getElementById('getfm').onclick = function() {
+
+					chrome.storage.sync.get('combine4',linkU4);
+
+				}
 
 
 
