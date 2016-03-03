@@ -1,2 +1,2 @@
-# PlanHS
+# PlanVIEW
 StashBoard Chrome Extension
