@@ -5,9 +5,15 @@
 		<title>PlanView | Dashboard</title>
 		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="material/js/materialize.min.js" type="text/javascript" charset="utf-8" ></script>
+		<script src="app.js" defer async type="text/javascript" charset="utf-8" ></script>
 		<link rel="stylesheet" href="material/css/materialize.min.css">
 		<style>
 			@font-face{font-family: anders;src:url(/anders.ttf);}.font-anders{font-family:anders;}
+			*
+			{
+				max-height:750px;
+				max-width:750px;
+			}
 			html
 			{
 				height:750px;
@@ -22,6 +28,7 @@
 				height:125px;
 				width:150px;
 				margin-right:-15px;
+				z-index:100;
 			}
 			#nav-divider
 			{
@@ -37,6 +44,7 @@
 				margin-top:15px;
 				position:fixed;
 				width:100%;
+				z-index:99;
 			}
 			#blocks li
 			{
@@ -54,6 +62,13 @@
 			{
 				padding-right:15px;
 			}
+			.main-helper
+			{
+				height:100px;
+				background:url(images/back.png) no-repeat right center fixed;
+				position:fixed;
+				width:100%;
+			}
 			main
 			{
 				margin-top:100px;
@@ -63,6 +78,16 @@
 				margin-left:1.5%;
 				margin-right:1.5%;
 				width:47%;
+			}
+			.tabs.fixed
+			{
+				position:fixed;
+				left:0;
+				width:99%;
+			}
+			.tabSection
+			{
+				margin-top:75px;
 			}
 		</style>
 	</head>
@@ -100,64 +125,87 @@
 				</nav>
 			</div>
 		</header>
+		<div class="main-helper"></div>
 		<main>
-			<div class="container" id="main">
-				<div class="row" id="notes">
+		<div class="row container" id="main">
+			<div class="col s12">
+				<ul class="tabs fixed">
+					<li class="tab col s3"><a class="active" href="#notes">Notes</a></li>
+					<li class="tab col s3"><a href="#calendar">Calendar</a></li>
+					<li class="tab col s3"><a href="#links">Helpful Links</a></li>
+				</ul>
+				<div class="row tabSection" id="notes">
 					<div class="row">
-						<div class="col s6 l6 orange darken-1 center"><h5>Day #</h3></div>
-						<div class="col s6 l6 white center"><h5>Day #</h3></div>
+						<div class="col s6 l6 orange darken-1 center"><h5>Day #</h5></div>
+						<div class="col s6 l6 white center"><h5>Day #</h5></div>
 					</div>
 					<div class="row">
 						<div class="col s6 l6 orange darken-1 center">
-							<h5>Block X</h3>
+							<h5>Block X</h5>
 							<hr class="white-text white" />
 							<a class="white-text flow-text content left">Content</a>
 						</div>
 						<div class="col s6 l6 white center">
-							<h5>Block Y</h3>
+							<h5>Block Y</h5>
 							<hr class="white-text white" />
 							<a class="orange-text text-darken-1 flow-text content left">Content</a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col s6 l6 orange darken-1 center">
-							<h5>Block X</h3>
+							<h5>Block X</h5>
 							<hr class="white-text white" />
 							<a class="white-text flow-text content left">Content</a>
 						</div>
 						<div class="col s6 l6 white center">
-							<h5>Block Y</h3>
+							<h5>Block Y</h5>
 							<hr class="white-text white" />
 							<a class="orange-text text-darken-1 flow-text content left">Content</a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col s6 l6 orange darken-1 center">
-							<h5>Block X</h3>
+							<h5>Block X</h5>
 							<hr class="white-text white" />
 							<a class="white-text flow-text content left">Content</a>
 						</div>
 						<div class="col s6 l6 white center">
-							<h5>Block Y</h3>
+							<h5>Block Y</h5>
 							<hr class="white-text white" />
 							<a class="orange-text text-darken-1 flow-text content left">Content</a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col s6 l6 orange darken-1 center">
-							<h5>Block X</h3>
+							<h5>Block X</h5>
 							<hr class="white-text white" />
 							<a class="white-text flow-text content left">Content</a>
 						</div>
 						<div class="col s6 l6 white center">
-							<h5>Block Y</h3>
+							<h5>Block Y</h5>
 							<hr class="white-text white" />
 							<a class="orange-text text-darken-1 flow-text content left">Content</a>
 						</div>
 					</div>
 				</div>
+				<div class="row tabSection" id="calendar">
+					<div class="row">
+						<div class="col s12">
+							<iframe src="error.html" style="border:0" width="625px" height="550px" frameborder="0" scrolling="no" position="relative" class="everything"></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="row tabSection" id="links">
+					<div class="row">
+						<div class="col s12">Test 1</div>
+					</div>
+				</div>
 			</div>
-		</main>
-	<footer class="footer flow-text">PlanVIEW produced by <a class="white-text font-anders">HexR</a></footer>
-</body>
-</html>
+			</main>
+			<footer class="page-footer transparent flow-text center">
+				PlanVIEW produced by <a class="white-text font-anders">HexR</a>
+			</footer>
+			<script type="text/javascript">
+			</script>
+		</body>
+	</html>
