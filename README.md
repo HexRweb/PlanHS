@@ -1,2 +1,0 @@
-# PlanVIEW
-StashBoard Chrome Extension

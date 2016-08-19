@@ -1,54 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>PlanHS</title>
-		<script src="jquery.js"></script>
-		<script src="full.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=.6" />
-		<link rel="stylesheet" href="style.css" type="text/css" />
+		<title>PlanVIEW</title>
+
+		<style>
+		body{
+			min-width:700px;
+
+		}
+		</style>
+
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/init.js" defer></script>
+		<script type="text/javascript" src="js/email.js"></script>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, height=device-height" />
+
+		<!--<plugin name="org.apache.cordova.inappbrowser" spec="0.1.0" source="pgb" />-->
+
+		<!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 	</head>
-	<body>
-		<!--logo with image map-->
-		<img class="right boxshadow" id="Image-Maps-Com-image-maps-2015-09-21-214935"  src="http://www.image-maps.com/m/private/0/0ecstt76nrp8sjb7u1cs83gmi3_westwood_hs_logo.jpg" border="0" width="150" height="125" orgWidth="252" orgHeight="179" usemap="#image-maps-2015-09-21-214935" align="right" alt="" />
-		<map name="image-maps-2015-09-21-214935" id="ImageMapsCom-image-maps-2015-09-21-214935">
-			<area  alt="" title="" href="http://westwood.roundrockisd.org/" shape="rect" coords="0,0,252,179" style="outline:none;" target="_blank"     />
-			<area shape="rect" coords="250,177,252,179" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
-		</map>
-		<!--Top banner with logo-->
-		<section>
-			<table cellspacing="5">
-				<tr>
-					<td>
-						<div class="banner">
-							<div class="right"><a href="extension.html"><font size="30" face="Comic Sans MS" align="center" color="White">  PlanHS </font></a><a class="" href="settings.html" style="float:right;">Settings</a></div>
+	<body class="grey darken-3">
+		<header>
+			<nav class="cyan darken-4 lighten-1" role="navigation">
+				<div class="nav-wrapper container">
+					<a id="logo-container" href="#" class="brand-logo center">PlanVIEW</a>
+					<ul id="nav-mobile" class="side-nav blue-grey">
+						<a class="waves-effect waves-light btn z-depth-5" href="extension.html"><i class="material-icons right">dashboard</i>Home</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-1" ><i class="material-icons right">web</i>1st Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-2" ><i class="material-icons right">web</i>2nd Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-3" ><i class="material-icons right">web</i>3rd Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-4" ><i class="material-icons right">web</i>4th Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-5" ><i class="material-icons right">web</i>5th Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-6" ><i class="material-icons right">web</i>6th Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-7"><i class="material-icons right">web</i>7th Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-8"><i class="material-icons right">web</i>8th Block</a>
+						<a class="waves-effect waves-light btn z-depth-4" href="settings.html"><i class="material-icons right">settings</i>Settings</a>
+					</ul>
+					<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+				</div>
+			</nav>
+		</header>
+
+		<main class="container section row">
+			<form class="col s12">
+				<hr color="white">
+				<h4 class="white-text">Links Setup</h4>
+				<hr color="white">
+								<blockquote class="white-text">
+										Please fill out all the boxes with links. You can put any link you want.
+								</blockquote>
+				<div class="row">
+					<div class="input-field col s12">
+						 <input type="checkbox" id="autosave" name="autosave" /><label for="autosave">Autosave notes (when you click away from a note, it automatically saves!)</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col l6 s12">
+						<!--1st Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+							<input  id="block-1-link" type="url" class="validate orange-text text-darken-4 flow-text" >
+								<label for="block-1-link"  class="active">1st Block Website Link</label>
+							</div>
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<!--menu tab with all the blocks-->
-						<div class="banner2">
-							<table cellspacing="0">
-								<tr>
-									<td><div class="main move_right block-selector block-1"><a href="1.html" class="silver font-25 center"><strong>1st</strong></a></div></td>
-									<td><div class="tab1 move_right block-selector block-2"><a href="2.html" class="silver font-25 center"><b>2nd</b></a></div></td>
-									<td><div class="tab1 move_right block-selector block-3"><a href="3.html" class="silver font-25"><strong>3rd</strong></a></div></td>
-									<td><div class="tab1 move_right block-selector block-4"><a href="4.html" class="silver font-25"><strong>4th</strong></a></div></td>
-									<td><div class="tab1 move_right block-selector block-5"><a href="5.html" class="silver font-25"><strong>5th</strong></a></div></td>
-									<td><div class="tab1 move_right block-selector block-6"><a href="6.html" class="silver font-25"><strong>6th</strong></a></div></td>
-									<td><div class="tab1 move_right block-selector block-7"><a href="7.html" class="silver font-25"><strong>7th</strong></a></div></td>
-									<td><div class="tab1 move_right block-selector block-8"><a href="8.html" class="silver font-25"><strong>8th</strong></a></div></td>
-								</tr>
-							</table>
+						<!--2nd Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-2-link" type="url" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-2-link">2nd Block Website Link</label>
+							</div>
 						</div>
-					</td>
-				</tr>
-			</table>
-		</section>
-		<p id ="demo"></p>
-		<p class="white">To display the webpage, paste the link of your teachers website in the source section of link below :</p>
-		<textarea id="saveLine"><iframe id="cool" src="" width="750" height="725"></iframe></textarea>
-		<!--<a class="white">To display the webpage, paste the link of your teachers website in the source section of link below :</a>!-->
-		<input type="button" id="save" value="Update Line">
+						<!--3rd Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-3-link" type="url" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-3-link">3rd Block Website Link</label>
+							</div>
+						</div>
+						<!--4th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-4-link" type="url" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-4-link">4th Block Website Link</label>
+							</div>
+						</div>
+					</div>
+					<div class="input-field col l6 s12">
+						<!--5th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input   id="block-5-link" type="url" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-5-link">5th Block Website Link</label>
+							</div>
+						</div>
+						<!--6th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-6-link" type="url" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-6-link">6th Block Website Link</label>
+							</div>
+						</div>
+						<!--7th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-7-link" type="url" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-7-link">7th Block Website Link</label>
+							</div>
+						</div>
+						<!--8th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-8-link" type="text" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-8-link">8th Block Website Link</label>
+							</div>
+						</div>
+					</div>
+				</div>
+<br>
+<br>
+				<button class="waves-effect waves-light btn center" id="demo" type="submit">Save</button>
+				<br>
+				<br>
+				<br>
+				<br>
+			</form>
+
+<hr color="white">
+<h4 class="white-text">Email Setup</h4>
+<hr color="white">
+<br>
+<blockquote class="white-text">
+		Put your teacher's email to quickly email them from the home page.
+</blockquote>
+
+		<main class="container section row">
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col l6 s12">
+						<!--1st Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+							<input  id="block-1-email" type="text" class="validate orange-text text-darken-4 flow-text" >
+								<label for="block-1-email"  class="active">1st Block Email</label>
+							</div>
+						</div>
+						<!--2nd Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-2-email" type="text" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-2-email">2nd Block Email</label>
+							</div>
+						</div>
+						<!--3rd Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-3-email" type="text" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-3-email">3rd Block Email</label>
+							</div>
+						</div>
+						<!--4th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-4-email" type="text" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-4-email">4th Block Email</label>
+							</div>
+						</div>
+					</div>
+					<div class="input-field col l6 s12">
+						<!--5th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input   id="block-5-email" type="text" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-5-email">5th Block Email</label>
+							</div>
+						</div>
+						<!--6th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-6-email" type="text" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-6-email">6th Block Email</label>
+							</div>
+						</div>
+						<!--7th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-7-email" type="text" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-7-email">7th Block Email</label>
+							</div>
+						</div>
+						<!--8th Block Link-->
+						<div class="row">
+							<div class="input-field col s12">
+								<input  id="block-8-email" type="text" class="validate orange-text text-darken-4 flow-text">
+								<label for="block-8-email">8th Block Email</label>
+							</div>
+						</div>
+					</div>
+				</div>
+<br>
+<br>
+				<button class="waves-effect waves-light btn center" id="demo1" type="submit">Save</button>
+			</form>
+		</main>
+
+		<!--  Scripts-->
+		<script src="js/settings.js"></script>
 	</body>
 </html>

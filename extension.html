@@ -1,874 +1,371 @@
-<!DOCYPE html>
-<html>
-<head>
-  <script src="calender.js"></script>
-
-
-
-</head>
-
-<meta name="viewport" content="width=device-width, initial-scale=.6">
-
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>PlanVIEW</title>
 <style>
-html { background: url(images/back.png) no-repeat right center fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;overflow-x: hidden; margin-left: -2.5px;}
-
- a {text-decoration: none; }
-
- body {
-      background-color: ;
-      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -webkit-tap-highlight-color: rgba(0,0,0,0);
-      -webkit-touch-callout: none;
-       max-width: 150%;
-
-
-    }
- .banner {
-      position: relative;
-      display: inline-block;
-      width: 750px;
-      height: 75px;
-      vertical-align: top;
-     
-      margin-left: 7.5px;
-      margin-top: 10px;
-
-   
-      background-color: #006170;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-      float: center;
-}    
- .banner2 {
-      position: relative;
-      display: inline-block;
-      width: 750px;
-      height: 50px;
-      vertical-align: top;
-      padding-top: 5px;
-      padding-bottom: 10px;
-      margin-left: 7.5px;
-   
-      background-color: #DEDFDF;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-      float: center;
-} 
-.tab1 {
-      position: relative;
-      display: inline-block;
-      width: 35px;
-      height: 15px;
-      vertical-align: top;
-      padding-top: 10px;
-      padding-right: 10px;
-      margin-left: 10px;
-   
-      background-color:  #004c99;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-      float: center;
-}    
-.tab1right {
-      position: relative;
-      display: inline-block;
-      width: 70px;
-      height: 35px;
-      vertical-align: top;
-      padding-top: 10px;
-      padding-left: 10px;
-      margin-left: 450px;
-      margin-top: 10px;
-   
-      background-color:  #004466;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-      float: center;
-}  
-
-    
-    .dialog_orange {
-      position: relative;
-      display: inline-block;
-      width: 367.5px;
-      height: 20px;
-      vertical-align: top;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      background-color: #ff9005;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-      float: left;
-
+body{
+	min-width:725px;
 }
-.font_orange{
-padding-left: 50px;
-padding-bottom: 15px;
-
-}
-  .dialog_white {
-      position: relative;
-      display: inline-block;
-      width: 367.5px;
-      height: 20px;
-      vertical-align: top;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      background-color: white;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-      float: left;
-}
-
-  .dialog1 {
-      position: relative;
-      display: inline-block;
-      width: 367.5px;
-      height: 120px;
-      vertical-align: top;
-
-      padding-top: 20px;
-      background-color: #ff9005;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-      float: left;
-}
- 
-  
-    .dialog2{
-      position: relative;
-      display: inline-block;
-      width: 367.5px;
-      height: 120px;
-      vertical-align: top;
-      padding-top: 20px;
-      background-color: white;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-      float: left;
-    }
-
-.dialog3{
-      position: relative;
-      display: inline-block;
-      width: 750px;
-      height: 600px;
-      vertical-align: top;
-      padding-top: 20px;
-      background-color: #008B8B;
-      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-    }
-
-   .flash{
-    position: relative;
-    display: inline-block;
-   }
-    
-  div.move_right
-  {
-    padding-left: 15px;
-    padding-bottom: 10px;
-  }
-
-.align-right
-{
-  text-align: right;
-}
-    
-div.superman {
-  font-family: arial;
-  color: white;
-  font-size:70;
-  }
-img.float {
-  padding-top: 25px;
-
-  }
-
-
-h2.batman {
-  font-family: arial;
-  color:white;
-  font-size:10;
-  }
-h1.kalel {
-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-}
-h2.jorel {
-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-}
-img.boxShadow {
-box-shadow: 12px 12px 12px 12px rgba(0, 0, 0, 0.40);
-}
-
-
-
-
- img.right  
-{
-position: absolute;
-z-index: 10;
-top: 35px;
-left: 610px;
-}
-
- div.right  
-{
-position: absolute;
-z-index: 10;
-top: 10px;
-left: 10px;
-right: 20;
-}
-
-div.right20  
-{
-margin-left: -10px;
-}
-
- div.right2  
-{
-position: absolute;
-z-index: 10;
-top: 10px;
-left: 45px;
-}
-
-
-div.right1  
-{
-position: absolute;
-z-index: 10;
-top: 10px;
-left: 5px;
-}
-
-
-p.color1
-{
-  font-size: 12;
-  color:white;
-}
-
-p.color2
-{
-   font-size: 12;
-  color:orange;
-}
-.button {
-background-color: teal;
-border: white;
-height: 30px;
-width: 75px;
-}
-.button16 {
-background-color: teal;
-border: white;
-height: 30px;
-width: 100px;
-}
-
-.img{
-   -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-.img10 {
-}
-.img10:hover {
-    background-color: #00b3b3;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.30),0 17px 50px 0 rgba(0,0,0,0.25);
-}
-
-.img20{
-   -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-.img20 {
-}
-.img20:hover {
-    background-color: #COCOCO;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.button1 {
-background-color: teal;
-border: none;
-height: 35px;
-width: 150px;
- -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-.button10 {
-    background-color: teal; 
-}
-.button10:hover {
-    background-color: #00b3b3;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.button2 {
-background-color:  #004080;
-border: none;
-width: 58px;
-height: 35px;
--webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-.button20 {
-    background-color: #004080; 
-}
-.button20:hover {
-    background-color: #668cb2;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-.button3 {
-background-color:  #007399;
-border: none;
-width: 58px;
-height: 35px;
-}
-
-.button4 {
-background-color: white;
-border: none;
-width: 125px;
-height: 125px;
--webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.button40 {
-    background-color: white; 
-}
-.button40:hover {
-    background-color: #a6a6a6;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.button6 {
-background-color:  teal;
-border: none;
-width: 125px;
-height: 125px;
--webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-.button60 {
-    background-color: teal; 
-}
-.button60:hover {
-    background-color: #00b3b3;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-
-
-
-
 </style>
-
-<p id="updateImg"></p>
-
-
-
-<body>
-
-
-
-<!--logo -->
-<a href="westwood.html" ><img class="right boxshadow img20"  src="images/Westwood_HS_Logo.jpg" border="0" width="150" height="125"  align="right" alt="" /></a>
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/settings.js"></script>
+	<script type="text/javascript" src="js/init.js" defer></script>
+	<script type="text/javascript" src="js/notes.js" defer></script>
+	<script type="text/javascript" src="js/calender.js" defer></script>
 
 
-<!--Top banner with logo-->
-<section>
-   <table cellspacing="5">
-    <tr>
-      <td>
-        <div class="banner">
-        <div class="right "><a href="extension.html"><font size="30" face="Trebuchet MS"  align="center" color="White" class="img20">  PlanVIEW</font></a></div>
-        
-        </div>
-         </td>
-       
-      
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, height=device-height" />
 
-     
-    </tr>
-      <tr>
-        <td>
+		<!--<plugin name="org.apache.cordova.inappbrowser" spec="0.1.0" source="pgb" />-->
 
-<!--menu tab with all the blocks-->
-<div class="banner2">
-<table cellspacing="5">
-<tr>
-<td>
-<a href="1.html" ><button class="button2 button20"><font color="#E0E0E0" size="2.5" align="center"><b>1st</b></font></button></a>
-</td>
-<td>
-<a href="2.html"><button class="button2 button20"><font color="#E0E0E0" size="2.5" align="center" ><b>2nd</b></font></button></a>
-</td>
-<td>
-<a href="3.html"><button class="button2 button20"><font color="#E0E0E0" size="2.5" ><b>3rd</b></font></button></a>
-</td>
-<td>
-<a href="4.html"><button class="button2 button20"><font color="#E0E0E0" size="2.5" ><b>4th</b></font></button></a>
-</td>
-<td>
-<a href="5.html"><button class="button2 button20"><font color="#E0E0E0" size="2.5" ><b>5th</b></font></button></a>
-</td>
-<td>
-<a href="6.html"><button class="button2 button20"><font color="#E0E0E0" size="2.5" > <b>6th</b></font></button></a>
-</td>
-<td>
-<a href="7.html"><button class="button2 button20"><font color="#E0E0E0" size="2.5" ><b>7th</b> </font></button></a>
-</td>
-<td>
-<a href="8.html"><button class="button2 button20"><font color="#E0E0E0" size="2.5" ><b>8th</b></font></button></a>
-<td>
-<a href="howto.html"><button class="button3 button20"><font color="#E0E0E0" size="2" ><b>Setup Help<b></font></button></a>
+		<!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+	</head>
+	<body class="grey darken-3">
+		<header class="navbar-fixed header-one">
+			<nav class="cyan darken-4 lighten-1" role="navigation">
+				<div class="nav-wrapper container">
+		      <a href="#" class="brand-logo center">PlanVIEW</a>
 
-</td>
-
-        </td>
-      </tr>
-
-  </table>
-</table>
-</section>
+	<ul id="nav-mobile" class="side-nav blue-grey">
+						<a class="waves-effect waves-light btn z-depth-5" href="extension.html"><i class="material-icons right">dashboard</i>Home</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-1"><i class="material-icons right">web</i>1st Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-2" ><i class="material-icons right">web</i>2nd Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-3" ><i class="material-icons right">web</i>3rd Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-4" ><i class="material-icons right">web</i>4th Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-5" ><i class="material-icons right">web</i>5th Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-6" ><i class="material-icons right">web</i>6th Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-7" ><i class="material-icons right">web</i>7th Block</a>
+						<a class="waves-effect waves-light btn class z-depth-3" id="block-8" ><i class="material-icons right">web</i>8th Block</a>
+						<a class="waves-effect waves-light btn z-depth-4" href="settings.html" target="_blank"><i class="material-icons right">settings</i>Settings</a>
+					</ul>
+					<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+				</div>
+			</nav>
+		</div>
+		</header>
 
 
-<!--Tablw with every single block box-->
+		<main class="container section ">
+			<div class="">
+		  <!-- Modal Trigger -->
+		  <a class="waves-effect waves-light btn modal-trigger center blue-grey" href="#modal1">Get Started</a>
+      <a class="waves-effect waves-light btn blue-grey" href="#calendar">Calendar</a>
+      <a class="waves-effect waves-light btn  blue-grey" href="#help">Helpful Links</a>
+      <a class="waves-effect waves-light dropdown-button btn blue-grey" href="#" data-activates="dropdown1"><i class="material-icons">today</i></a>
+			<a class="waves-effect waves-light dropdown-button btn blue-grey" href="#" data-activates="dropdown2"><i class="material-icons">email</i></a>
+			<a class="waves-effect waves-light dropdown-button btn blue-grey" href="settings.html" target="_blank"><i class="material-icons">settings</i></a>
+		</div>
+		<!-- Dropdown Structure -->
+	   <ul id='dropdown1' class='dropdown-content white-text'>
+	     <li><a href="chem.html">Chemistry</a></li>
+	     <li><a href="physics.html" target="_blank">Physics</a></li>
+			 <li><a href="https://chrome.google.com/webstore/detail/planview/ahdmabmmnnkachilcgkacffibgbgfoln" target="_blank">Chrome</a></li>
+			 <li class="divider"></li>
+	   </ul>
 
- <table cellspacing="12" >
- <tr>
- <td>
-<!--Orange-->
+		 <!-- Dropdown Structure -->
+ 	   <ul id='dropdown2' class='dropdown-content white-text'>
+ 	     <li><a href="#" id="email-1">1st</a></li>
+			 <li><a href="#" id="email-2">2nd</a></li>
+			 <li><a href="#" id="email-3">3rd</a></li>
+			 <li><a href="#" id="email-4">4th</a></li>
+			 <li><a href="#" id="email-5">5th</a></li>
+			 <li><a href="#" id="email-6">6th</a></li>
+			 <li><a href="#" id="email-7">7th</a></li>
+			 <li><a href="#" id="email-8">8th</a></li>
 
- <div class="dialog_orange img20"> 
-  
-   <div class="right2 "><font  face="Trebuchet MS" size="6" color="white" class="font_orange"><b>Orange Day<b></font></div>
-
- </div>
- </td>
- <td>
-
- <div class="dialog_white img20">
- 
-
-<!--White-->
-
-   <div class="right2 "><font  face="Trebuchet MS" size="6" color="orange" class="font_orange"><b>White Day<b></font></div>
-   </td>
- </tr>
- 
+ 			 <li class="divider"></li>
+ 	   </ul>
 
 
- 
- 
- <!--1st Block-->
-<tr>
-  <td>
-     <div class="dialog1 img20">
-        <div class="right1"><font face="Trebuchet MS" color="white"><b>1st Block <b></font></div>
-         <hr color="white" >
-         <div class="move_right"> <p id="trial1"  class="color1" size="5" align="center"></p>
+		  <!-- Modal Structure -->
+		  <div id="modal1" class="modal bottom-sheet">
+		    <div class="modal-content">
+		      <h4>Welcome to PlanVIEW</h4>
+		      <p>
+						<h5>Links Setup</h5>
+						<ol type="1">
+							<li>Click <a href="settings.html" target="_blank">here</a> to go to Settings</li>
+
+
+						<li>Scroll down to the tab that says <em>Settings</em> and press it </li>
+
+						<li>Next, open up your First Block Teacher's Website. Copy the link from the address bar.</li>
+
+						<li>Go back to the PlanVIEW Settings page and  paste the link in the box that says <em>1st Block Website Link</em></li>
+
+						<li>Do it this for the rest of your classes.</li>
+
+						<li>Click Save. You should get message that says Settings Saved </li>
+						</ol>
+						    <blockquote>
+									<b>Important Note</b>
+									<br>
+									<br>
+									If your class doesn't have a website or you do not use the website, you MUST still put a link of a website in that box. It can be important websites you visit or something like google.com.
+							    </blockquote>
+						<br>
+						Now, if you ever have to go to your teacher's website quickly then you can click (menu) button and then the  tab you need instead of searching for it on your browser
+						<br>
+						<hr color="teal">
+						<br>
+
+						<h5>Notes Setup</h5>
+						Taking quick notes on your phone of values from a lab or homework your teacher assigns can be extremely useful. With the PlanVIEW app, you can take quick notes very simply. Here’s how
+						<br>
+						<ol type="1">
+						<li>Click the line on the box of the block you want to type a note for.</li>
+						<li>Type up your note</li>
+						<li>Click Save Note </li>
+						</ol>
+						<br>
+
+						Your note is now <b>saved </b> and will be <b>available</b> when you open your app.
+						<blockquote>
+						<b>Important Note</b>
+						<br>
+						<br>
+
+							If you have a long note (ex. paragraphs) then you can still save it. Type or copy and paste what you need and then click save. When viewing the note, click on the paragraph and then press enter on your keyboard. The note will expand in a scrollable view
+						</blockquote>
+						<br>
+						<hr color="teal">
+						<br>
+						<h5>Calender Setup</h5>
+						View your Google Calender with all your events for a monthly view.
+						<br>
+						<ol type="1">
+						<li>Click the Calender button at the top</li>
+						<li>Enter your just the username for your email (ex. johedoe from johndoe@gmail.com)</li>
+						<li>Click Save and the reopen the extension </li>
+						</ol>
+						<br>
+					</p>
+		    </div>
+		    <div class="modal-footer">
+		      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Done</a>
+		    </div>
+		  </div>
+
+</main>
+
+<main class="container section">
+<hr color="white">
+<hr color="teal">
+<h5 class="white-text center">Notes</h5>
+<hr color="teal">
+<hr color="white">
+</main>
+		<main class="container section">
+			<div class="row">
+				<div class="col s12 m6">
+					<div class="card amber darken-3 z-depth-5">
+						<div class="card-content white-text">
+							<p class="card-title"><b>1st Block</b></p>
+							<div class="row">
+								<form class="col s12">
+									<div class="input-field col s12">
+										<textarea id="block-1-notes" class="materialize-textarea" data-block="1"></textarea>
+										<label for="block-1-notes">Notes</label>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="card-action">
+							<a class="waves-effect waves-grey white-text btn-save" data-block="1">Save Note</a>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<div class="card white z-depth-5">
+						<div class="card-content orange-text">
+							<p class="card-title"><b>5th Block</b></p>
+							<div class="row">
+								<form class="col s12">
+									<div class="input-field col s12">
+										<textarea id="block-2-notes" class="materialize-textarea" data-block="2"></textarea>
+										<label for="block-2-notes" class="orange-text">Notes</label>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="card-action">
+							<a class="waves-effect waves-grey orange-text btn-save" data-block="2">Save Note</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m6">
+					<div class="card amber darken-3 z-depth-5">
+						<div class="card-content white-text">
+							<p class="card-title"><b>2nd Block</b></p>
+							<div class="row">
+								<form class="col s12">
+									<div class="row">
+										<div class="input-field col s12">
+											<textarea id="block-3-notes" class="materialize-textarea" data-block="3"></textarea>
+											<label for="block-3-notes">Notes</label>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="card-action">
+							<a class="waves-effect waves-grey white-text btn-save" data-block="3">Save Note</a>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<div class="card white z-depth-5">
+						<div class="card-content orange-text">
+							<p class="card-title"><b>6th Block</b></p>
+							<div class="row">
+								<form class="col s12">
+									<div class="input-field col s12">
+										<textarea id="block-4-notes" class="materialize-textarea" data-block="4"></textarea>
+										<label for="block-4-notes " class="orange-text">Notes</label>
+
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="card-action">
+							<a class="waves-effect waves-grey orange-text btn-save" data-block="4">Save Note</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m6">
+					<div class="card amber darken-3 z-depth-5">
+						<div class="card-content white-text">
+							<p class="card-title"><b>3rd Block</b></p>
+							<div class="row">
+								<form class="col s12">
+									<div class="row">
+										<div class="input-field col s12">
+											<textarea id="block-3-notes" class="materialize-textarea" data-block="3"></textarea>
+											<label for="block-3-notes">Notes</label>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="card-action">
+							<a class="waves-effect waves-grey white-text btn-save" data-block="5">Save Note</a>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<div class="card white z-depth-5">
+						<div class="card-content orange-text">
+							<p class="card-title"><b>7th Block</b></p>
+							<div class="row">
+								<form class="col s12">
+									<div class="input-field col s12">
+										<textarea id="block-6-notes" class="materialize-textarea" data-block="6"></textarea>
+										<label for="block-6-notes" class="orange-text">Notes</label>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="card-action">
+							<a class="waves-effect waves-grey orange-text btn-save" data-block="6">Save Note</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m6">
+					<div class="card amber darken-3 z-depth-5">
+						<div class="card-content white-text">
+							<p class="card-title"><b>4th Block</b></p>
+							<div class="row">
+								<form class="col s12">
+									<div class="input-field col s12">
+										<textarea id="block-7-notes" class="materialize-textarea" data-block="7"></textarea>
+										<label for="block-7-notes" class="white-text">Notes</label>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="card-action">
+							<a class="waves-effect waves-grey white-text btn-save" data-block="7">Save Note</a>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<div class="card white z-depth-5">
+						<div class="card-content orange-text">
+							<p class="card-title"><b>8th Block</b></p>
+							<div class="row">
+								<form class="col s12">
+									<div class="input-field col s12">
+										<textarea id="block-8-notes" class="materialize-textarea" data-block="8"></textarea>
+										<label for="block-8-notes" class="orange-text">Notes</label>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="card-action">
+							<a class="waves-effect waves-grey orange-text btn-save" data-block="8">Save Note</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<a name="calendar">
+<main class="container section">
+	<hr color="white">
+	<hr color="teal">
+	<h5 class="white-text center">Calendar</h3>
+	<hr color="teal">
+	<hr color="white">
+
+
+<p class="z-depth-5" id="demo"></p>
+<br>
+<br>
+<br>
+<div class="input-field col s12">
+	<input id="saveLine" type="email" class="validate">
+	<label for="email">Username</label>
+	<a class="waves-effect waves-light btn" id="save"><i class="material-icons right">cloud</i>Save</a>
+<br>
+	<h6 class="white-text">If your email is PlanVIEW@gmail.com then just put PlanVIEW inito the textbox</h6>
+
 </div>
-
- </td>
-
-
-<!-- 5th Block-->
- <td>
-     <div class="dialog2 img20">
-          <div class="right1"> <font face="Trebuchet MS" color="orange"><b>5th Block <b></font></a></div>
-   
-    <hr color="orange" >
-  <div > <p id="trial5" size="5" align="center" class="color2"></p> </div>
- </td>
- </tr>
-
-<!--2nd Block-->
-<tr>
-  <td>
-      <div class="dialog1 img20">
-        
-        <div class="right1"><font face="Trebuchet MS" color="white"><b>2nd Block <b></font></div>
-         <hr color="white" >    
-        <div ><p id="trial2" align="center" class="color1" ></p></div>
-  </td>
-
- 
-  <td>
-       <div class="dialog2 img20"> 
-          <div class="right1"> <font face="Trebuchet MS" color="orange"><b>6th Block <b></font></a></div>
-    <hr color="orange" >
-   <div > <p id="trial6"  size="5" align="center" class="color2"></p> </div>
-  </td>
- </tr>
- 
-
-<!--3rd Block-->
-
-<tr>
-  <td>
-    <div class="dialog1 img20"> 
-    <div class="right1"><font face="Trebuchet MS" color="white"><b>3rd Block <b></font></div>
-    <hr color="white" >
-    <div ><p id="trial3" size="5" align="center" class="color1" ></p> </div>
- </td>
- 
-<!--7th Block-->
-
-  <td>
-     <div class="dialog2 img20">  
-          <div class="right1"> <font face="Trebuchet MS" color="orange"><b>7th Block <b></font></a></div>
-          <hr color="orange" >
-          <div > <p id="trial7"  size="5" align="center" class="color2"></p> </div>
-            
-    </div>
-  </td>
- </tr>
- 
-<!--4th Block-->
+</div>
+</main>
 
 
- <tr>
-  <td>
-       <div class="dialog1 img20">
-          <div class="right1"><font face="Trebuchet MS" color="white"><b>4th Block<b></font></div>
-            <hr color="white" >
-             <div > <p id="trial4" size="5" align="center" class="color1" ></p> </div>
-  </td>
-
-<!--8th Block-->
-
-  <td>
-       <div class="dialog2 img20">
-        <div class="right1"> <font face="Trebuchet MS" color="orange"><b>8th Block <b></font></a></div>
-            <hr color="orange" >
-               <div > <p id="trial8"  size="5" align="center" class="color2"></p> </div>
-  </td>
-</tr>
- 
-</table>
-<br>
-<br>
-<br>
- <section align="center">
-
-<font color="white" face="Trebuchet MS" size="5"><b>Notes<b></font>
-
-<br>
-<br>
-<font color="white" face="Trebuchet MS" size="3">Type in your notes below. Click the block you need to save it for. <br>Then click Save Notes. Restart the extension</font>
-<br>
-<br>
+<a name="help">
+<main class="container section">
+	<hr color="white">
+	<hr color="teal">
+	<h5 class="white-text center">Helpful Links</h5>
+	<hr color="teal">
+	<hr color="white">
 <br>
 
-<textarea id="saveLine2"  class="" rows="6" cols="84" ></textarea>
-<br>
-<br>
+	<div class="carousel ">
+    <a  target="_blank" class="carousel-item" href="https://accesscenter.roundrockisd.org/HomeAccess/Account/LogOn?ReturnUrl=%2fHomeAccess%2fClasses%2fClasswork#q_login_nows"><img src="images/qHAC.png"></a>
+    <a  target="_blank" class="carousel-item" href="https://www.khanacademy.org/"><img src="images/khan.jpg"></a>
+    <a  target="_blank" class="carousel-item" href="https://classroom.google.com/h"><img src="images/g_class.jpg"></a>
+		<a  target="_blank" class="carousel-item" href="https://chrome.google.com/webstore/category/apps"><img src="images/chromeweb.png"></a>
+    <a  target="_blank" class="carousel-item" href="https://quizlet.com/latest"><img src="images/quizlet.jpg"></a>
+		<a  target="_blank" class="carousel-item" href="https://keep.google.com/"><img src="images/keep.jpg"></a>
+		<a  target="_blank" class="carousel-item" href="https://drive.google.com/drive/my-drive"><img src="images/g_drive.jpg"></a>
 
-<button id="stick1" class="button button10"><font color="white" face="Trebuchet MS">1st</font></button>
-<button id="stick2" class="button button10"><font color="white" face="Trebuchet MS">2nd</font></button>
-<button id="stick3" class="button button10"><font color="white" face="Trebuchet MS">3rd</font></button>
-<button id="stick4" class="button button10"><font color="white" face="Trebuchet MS">4th</font></button>
-<button id="stick5" class="button button10"><font color="white" face="Trebuchet MS">5th</font></button>
-<button id="stick6" class="button button10"><font color="white" face="Trebuchet MS">6th</font></button>
-<button id="stick7" class="button button10"><font color="white" face="Trebuchet MS">7th</font></button>
-<button id="stick8" class="button button10"><font color="white" face="Trebuchet MS">8th</font></button>
-
-<button id="post" class="button button10"><font color="white" face="Trebuchet MS">Save Note</font></button>
-<br>
-<br>
-
-</section>
-
-
-
-
-
-<table cellspacing="20" align="center">
-
- <!--Helpful Links Card-->
-
-        <hr color="white">
-        <hr color="teal">
-        <section align="center">
-            <font face="Trebuchet MS" color="white" size="5"> <b>Helpful Links<b></font>
-            </section>
-            <hr color="teal">
-            <hr color="white">
-
-        
-        <table align="center" cellspacing="20">
-        <tr>
-          <td>
-                <!--Khan Academy-->
-                  <a href="https://www.khanacademy.org/" target="_blank" title="Khan Academy" >
-                  <img src="images/khan.jpg" alt="Khan Academy" style="width:125px;height:125px;border:0" class="everything img10"></a>
-          </td>
-        
-         <td>
-                <!--Google Classroom-->
-                <a href="https://classroom.google.com/ineligible" target="_blank" title="Google Classroom">
-                <img src="images/g_class.jpg" style="width:125px;height:125px;border:0" class="everything img10"></a>
-          </td>
-          
-          <td>
-                <!--qHAC-->
-                <a href="https://accesscenter.roundrockisd.org/HomeAccess/Account/LogOn?ReturnUrl=%2fHomeAccess%2f" target="_blank" title="Edmodo">
-                <img src="images/qHAC.png" alt="Home Access Center" style="width:125px;height:125px;border:0" class="everything img10">
-          </td>
-          
-         
-          <td>
-                <!--SparkNotes-->
-                <a href="http://www.sparknotes.com/" target="_blank" title="SparkNotes">
-                <img src="images/s_notes.jpg" alt="Spark Notes" style="width:125px;height:125px;border:0" class="everything img10"> </a> 
-          </td>
-        </tr>
-        
-        <tr>
-           <td>
-              <!--Google Drive-->
-             <a href="https://drive.google.com/drive/my-drive" target="_blank" title="Google Drive">
-             <img src="images/g_drive.jpg" alt="Google Drive" style="width:125px;height:125px;border:0" class="everything img10"></a>
-          </td>
-          
-          <td>
-                <!--R.R.I.S.D.-->
-                <a href="https://roundrockisd.org/" target="_blank" title="R.R.I.S.D.">
-                <img src="images/rrisd.jpg" alt="Round Rock I.S.D." style="width:125px;height:125px;border:0" class="everything img10"></a> 
-          </td>
-          
-          <td>
-              <!--Google Keep-->
-              <a href="https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&continue=https://keep.google.com/&followup=https://keep.google.com/&ltmpl=keep" target="_blank" title="Google Keep">
-              <img src="images/keep.jpg" alt="Round Rock I.S.D." style="width:125px;height:125px;border:0" class="everything img10"></a>
-          </td>
-          
-          <td>
-              <!--Quizlet--> 
-              <a href="https://quizlet.com/latest" target="_blank" title="Quizlet">
-              <img src="images/quizlet.jpg" alt="Quizlet" style="width:125px;height:125px;border:0" class="everything img10"></a>
-          </td>
-          
-        </tr>
-
-
-        <tr>
-         
-
-           <td>
-                <!--Shmoop-->
-               <a href="http://www.shmoop.com/" target="_blank" title="Shmoop"> 
-               <img src="images/shmoop.jpg" alt="Shmoop" style="width:125px;height:125px;border:0" class="everything img10"></a>
-          </td>
-
-         
-          <td>
-             <!--Schoology-->
-             <a href="https://www.schoology.com/home.php" target="_blank" title="Schoology">
-             <img src="images/s_logoy.jpg" alt="Schoology" style="width:125px;height:125px;border:0" class="everything img10"></a>
-      
-          </td>
-          
-          <td>
-              <!--Westwood Student Links-->
-              <a href="http://demo.tutorialzine.com/2015/04/material-design-stopwatch-alarm-and-timer/" target="_blank" title="Alarm/Stopwatch/Timer">
-              <img src="images/clock.jpg" alt="Westwood Student Links" style="width:125px;height:125px;border:0" class="everything img10">
-          </td>
-          
-          <td>
-              <!--Chrome Web Store-->
-              <a href="https://chrome.google.com/webstore/category/apps" target="_blank" title="Chrome Web Store">
-              <img src="images/chromeweb.png" alt="Chrome Web Store" style="width:125px;height:125px;border:0" class="everything img10">
-          </td>
-        </tr>
-          
-
-        <tr>
-         
-
-           <td>
-                <!--Link 1-->
-              <p id="link1"></p>
-          </td>
-
-         
-          <td>
-             <!--Link 2-->
-             <p id="link2"></p>
-      
-          </td>
-          
-          <td>
-              <!--Link 3-->
-              <p id="link3"></p>
-          </td>
-          
-          <td>
-              <!--Link 4-->
-              <p id="link4"></p>
-          </td>
-        </tr>
-
-          </table>
-         
-     </table>
-     <section align="center">
-       
-        <font color="white" face="Trebuchet MS" size="5" align="center"><b>Personal Links<b></font>
-        <br>
-        <br>
-        
-        <font color="white" face="Trebuchet MS" size="3" align="center"><b>Paste link to website of choice below and click the box you would like to save it for. <br> Click Upload Link. Restart PlanVIEW.<b></font>
-<br>
-        <br>
-</section>
-
-<table cellspacing="2" align="center">
-<tr>
-<td>
-<textarea id="saveLine10" cols="25" ></textarea>
-</td>
-<td>
-<button id="savefm1" class="button button10"><font color="white" face="Trebuchet MS">Link 1</font></button>
-</td>
-<td>
-<button id="savefm2" class="button button10"><font color="white" face="Trebuchet MS">Link 2</font></button>
-</td>
-<td>
-<button id="savefm3" class="button button10"><font color="white" face="Trebuchet MS">Link 3</font></button>
-</td>
-<td>
-<button id="savefm4" class="button button10"><font color="white" face="Trebuchet MS">Link 4</font></button>
-</td>
-<td>
-<button id="getfm" class="button16 button10"><font color="white" face="Trebuchet MS">Upload Link</font></button>
-</td>
-</tr>
-</table>
-</section>
-
-<br>
-<br>
-<!--Google Calender-->
-
- <table cellspacing="20">
- 
- <hr color="white">
-        <hr color="teal">
-        <section align="center">
-            <font face="Trebuchet MS" color="white" size="5"> <b>Calendar<b></font>
-            </section>
-            <hr color="teal">
-            <hr color="white">
-            
-         
-    <tr>
-     <td>
-        <div class="right20"><p id ="demo"></p></div>
-     </td>
-    </tr>
-</table>
-          
-
-          
-<br>
-
-
-
-
-
-<section align="center">
-
-
-
-<font color="white" size="5" face="Trebuchet MS"><b>Setup Calendar<b></font>
-
-<br>
-<br>
-<font color="white" size="4" face="Trebuchet MS">Enter only your username of your personal gmail account in the box below 
-<br>
-(Ex. just johndoe from johndoe@gmail.com)
-<br>
-<br>
-Click Save Username. Then click Show Calender</font>
-
-<br>
-<br>
-
-<table cellspacing="2" align="center">
-<tr>
-<td>
-<textarea id="saveLine" cols="25" ></textarea>
-</td>
-<td>
-<button id="save" class="button1 button10"><font color="white" face="Trebuchet MS">Save Username</font></button>
-</td>
-<td>
-<button id="get" class="button1 button10"><font color="white" face="Trebuchet MS">Show Calender</font></button>
-</td>
-</tr>
-</table>
-<br>
-<br>
-
-
-<hr color="white">
-<hr color="teal">
-<font color="white" size="5" face="Trebuchet MS"><b>Customize Background Image<b></font>
-<hr color="teal">
-<hr color="white">
-<br>
-<br>
-<font color="white" size="4" face="Trebuchet MS">Paste a link to an image for your background. Click Save. Then click Update 
-
-
-<br>
-</font>
-
-<br>
-<br>
-
-<table cellspacing="2" align="center">
-<tr>
-<td>
-<textarea id="saveLine4" cols="25" ></textarea>
-</td>
-<td>
-<button id="up" class="button1 button10"><font color="white" face="Trebuchet MS">Save </font></button>
-</td>
-<td>
-<button id="load" class="button1 button10"><font color="white" face="Trebuchet MS">Update</font></button>
-</td>
-</tr>
-</table>
-<br>
-
-
-
-</section>
-<hr color="White">
-<hr color="teal">
-
-<section align="right">
-<font color="white" size="2" face="Trebuchet MS" >Created by Swarn Singh</font>
-<br>
-<font color="white" size="2" face="Trebuchet MS" >Version 2.1.0</font>
-<br>
-<br>
-
-<a href="feedback.html"><button class="button1 button10"><font color="white" face="Trebuchet MS">Send us Feedback</font></button></a>
-
-</section>
-
-
-
-
-
+  </div>
+</main>
+	</body>
 </html>
