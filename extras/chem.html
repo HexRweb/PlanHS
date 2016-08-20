@@ -2,17 +2,15 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<!--Script-->
 		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript" src="js/materialize.js"></script>
 		<script type="text/javascript" src="js/init.js" defer></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/settings.js"></script>
-		<!-- CSS  -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-		<link rel="stylesheet" href="css/chem.css">
+		<link href="/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+		<link href="/css/chem.css" type="text/css" rel="stylesheet">
 		<style>
 		</style>
 	</head>
@@ -34,6 +32,7 @@
 						<a class="waves-effect waves-light btn z-depth-4" href="settings.html" target="_blank"><i class="material-icons right">settings</i>Settings</a>
 					</ul>
 					<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+					<a href="#" class="right" target="_blank"><i class="material-icons">open_in_new</i></a>
 				</div>
 			</nav>
 		</header>
@@ -195,14 +194,10 @@
 				<!--End Periodic Table-->
 			</div>
 			<div class="design-hr">
-				<hr color="white">
-				<hr color="teal">
-				<h5 class="center white-text">Chemistry "Must Knows"</h5>
-				<hr color="teal">
-				<hr color="white">
+				<h5 class="center white-text decorated">Chemistry "Must Knows"</h5>
 			</div>
 			<div class="row center">
-				<iframe src="data/chemistry.pdf" width="600" height="900" class="center" frameBorder="0"></iframe>
+				<iframe src="/data/chemistry.pdf" width="600" height="900" class="center" frameBorder="0"></iframe>
 			</div>
 		</main>
 	</body>

@@ -2,28 +2,18 @@
 <html lang="en">
 	<head>
 		<title>PlanVIEW</title>
-
 		<style>
-		body{
-			min-width:700px;
-
-		}
+		body{min-width:700px;}
 		</style>
-
 		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript" src="js/materialize.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/init.js" defer></script>
 		<script type="text/javascript" src="js/email.js"></script>
-
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, height=device-height" />
-
-		<!--<plugin name="org.apache.cordova.inappbrowser" spec="0.1.0" source="pgb" />-->
-
-		<!-- CSS  -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 	</head>
 	<body class="grey darken-3">
@@ -44,30 +34,30 @@
 						<a class="waves-effect waves-light btn z-depth-4" href="settings.html"><i class="material-icons right">settings</i>Settings</a>
 					</ul>
 					<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+					<a href="#" class="right hide-on-large-only" target="_blank"><i class="material-icons">open_in_new</i></a>
 				</div>
 			</nav>
 		</header>
-
 		<main class="container section row">
-			<form class="col s12">
-				<hr color="white">
-				<h4 class="white-text">Links Setup</h4>
-				<hr color="white">
-								<blockquote class="white-text">
-										Please fill out all the boxes with links. You can put any link you want.
-								</blockquote>
+			<section class="misc section">
 				<div class="row">
 					<div class="input-field col s12">
-						 <input type="checkbox" id="autosave" name="autosave" /><label for="autosave">Autosave notes (when you click away from a note, it automatically saves!)</label>
+						 <input type="checkbox" id="autosave" name="autosave" /><label for="autosave" class="white-text">Autosave notes (when you click away from a note, it automatically saves!)</label>
 					</div>
 				</div>
-				<div class="row">
+			</section>
+			<section class="links section">
+				<form class="row">
+					<h4 class="white-text decorated center">Links Setup</h4>
+					<blockquote class="white-text flow-text">
+						Please fill out all the boxes with links. You can put any link you want.
+					</blockquote>
 					<div class="input-field col l6 s12">
 						<!--1st Block Link-->
 						<div class="row">
 							<div class="input-field col s12">
-							<input  id="block-1-link" type="url" class="validate orange-text text-darken-4 flow-text" >
-								<label for="block-1-link"  class="active">1st Block Website Link</label>
+								<input  id="block-1-link" type="url" class="validate orange-text text-darken-4 flow-text" >
+								<label for="block-1-link flow-text" class="active">1st Block Website Link</label>
 							</div>
 						</div>
 						<!--2nd Block Link-->
@@ -122,27 +112,15 @@
 							</div>
 						</div>
 					</div>
-				</div>
-<br>
-<br>
-				<button class="waves-effect waves-light btn center" id="demo" type="submit">Save</button>
-				<br>
-				<br>
-				<br>
-				<br>
-			</form>
-
-<hr color="white">
-<h4 class="white-text">Email Setup</h4>
-<hr color="white">
-<br>
-<blockquote class="white-text">
-		Put your teacher's email to quickly email them from the home page.
-</blockquote>
-
-		<main class="container section row">
-			<form class="col s12">
-				<div class="row">
+					<button class="waves-effect waves-light btn center" id="demo" type="submit">Save</button>
+				</form>
+			</section>
+			<section class="emails section">
+				<h4 class="white-text decorated center">Email Setup</h4>
+				<blockquote class="white-text flow-text">
+					Put your teacher's email to quickly email them from the home page.
+				</blockquote>
+				<form class="row">
 					<div class="input-field col l6 s12">
 						<!--1st Block Link-->
 						<div class="row">
@@ -203,14 +181,13 @@
 							</div>
 						</div>
 					</div>
-				</div>
-<br>
-<br>
-				<button class="waves-effect waves-light btn center" id="demo1" type="submit">Save</button>
-			</form>
+					<button class="waves-effect waves-light btn center" id="demo1" type="submit">Save</button>
+				</form>
+			</section>
 		</main>
-
-		<!--  Scripts-->
+		<footer class="grey darken-3 white-text center footer">
+			<p class="flow-text">Made with <a class="pink-text">❤</a> by <a href="https://hexr.org" target="_blank">HexR</a></p>
+		</footer>
 		<script src="js/settings.js"></script>
 	</body>
 </html>
