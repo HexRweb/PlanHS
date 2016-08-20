@@ -3,10 +3,14 @@ body {
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
+  min-width:700px;
+}
+.decoration-hr{
+  padding:0 5%;
 }
 .periodic {
   position: relative;
-  height: 200px;
+  height: 250px;
   margin-right: -1px;
   text-shadow: none;
 }
@@ -183,10 +187,10 @@ body {
   .periodic {
     height: 800px;
   }
-  .at_num,
-  .at_details {
-    font-size: 6px;
+  .at_num{
+    font-size: 12px;
   }
+  .at_details {font-size:6px;}
   .symbol {
     font-size: 30px;
   }
