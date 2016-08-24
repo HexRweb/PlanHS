@@ -34,6 +34,31 @@ window.pv = window.pv ||
 	{
 		return !(after === before)
 	},
+	init: function(otherInit)
+	{
+		/*Init functions*/
+		if(typeof otherInit === "string" && typeof pv["init_"+otherInit] === "function")
+			pv["init-"+otherInit]();
+	},
+	init_settings: function()
+	{
+	},
+	init_notes: function()
+	{
+
+	},
+	init_chem: function()
+	{
+
+	},
+	init_physics: function()
+	{
+
+	},
+	init_getStarted: function()
+	{
+
+	},
 	emails:
 	{
 
@@ -124,7 +149,53 @@ window.pv = window.pv ||
 			{
 				pv.links.setBlock(i,""); //Even though set is deprecated it's more definitive of what we're doing
 			}
-			pv.pushChange("REBUILD","links.create",JSON.parse(old),JSON.parse(pv.getOption("emails")),{"format":"JSON"})
+			pv.pushChange("REBUILD","links.create",JSON.parse(old),JSON.parse(pv.getOption("links")),{"format":"JSON"})
+		}
+	},
+	notes:
+	{
+		getBlock: function(block)
+		{
+			return JSON.parse(pv.getOption("notes"))[block];
+		},
+		updateBlock: function(block,note)
+		{
+			var current = JSON.parse(pv.getOption("notes")), previous = current[block];
+			if(pv.containsDifference(previous,note))
+			{
+				current[block] = note;
+				pv.updateOption("notes",JSON.stringify(current));
+				pv.pushChange("UPDATE","notes.updateBlock",previous,note,{"block":block,"format":"STRING"});
+				return true;
+			}
+			return false;
+		},
+		setBlock: function(block,note)
+		{
+			return pv.notes.updateBlock(block,note);
+		},
+		resetNotes: function()
+		{
+			var del = JSON.parse(pv.getOption("notes"));
+			for(toDel in del)
+			{
+				pv.notes.updateBlock(toDel,"");
+			}
+			pv.pushChange("RESET","notes.resetNotes",del,JSON.parse(pv.getOption("notes")),{"format":"JSON"});
+		},
+		workabale: function(check)
+		{
+			return ((typeof check !== "undefined") && (check !== "") && (check !== null));
+		},
+		create: function()
+		{
+			var old = pv.getOption("notes");
+			pv.updateOption("notes","{}");
+			for(var i = 1; i <= 8; i++)
+			{
+				pv.notes.setBlock(i,""); //Even though set is deprecated it's more definitive of what we're doing
+			}
+			pv.pushChange("REBUILD","notes.create",JSON.parse(old),JSON.parse(pv.getOption("notes")),{"format":"JSON"})
 		}
 	}
 };

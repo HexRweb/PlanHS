@@ -8,5 +8,5 @@
 		"default_title": "PlanVIEW",
 		"default_popup": "index.html"
 	},
-	  "permissions": ["storage"]
+	"permissions": ["storage"]
 }
