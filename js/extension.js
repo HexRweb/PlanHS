@@ -37,15 +37,31 @@ window.pv = window.pv ||
 	init: function(otherInit)
 	{
 		/*Init functions*/
+		pv.links.updateLinks();
+		$(".button-collapse").sideNav();
+		$(".class").click(pv.links.events.click);
+		$(".email").click(pv.links.events.click);
+		$(".carousel").carousel();
+		//{{IMPLEMENT}}/*$(".class").click()*/
 		if(typeof otherInit === "string" && typeof pv["init_"+otherInit] === "function")
-			pv["init-"+otherInit]();
+			pv["init_"+otherInit]();
 	},
 	init_settings: function()
 	{
+		$("#save-links").click(pv.links.events.saveAll);
+		$("#save-emails").click(pv.emails.events.saveAll);
+		$("#autosave").change(function(){pv.updateOption("autosave",$(this).is(":checked")); Materialize.toast("Autosave settings updated!",1000);});
+		for(var i = 1; i <=8; i++)
+		{
+			$("#block-"+i+"-link").val(pv.links.getBlock(i).replace(/#noLink/g,""));
+			$("#block-"+i+"-email").val(pv.emails.getBlock(i).replace(/#noEmail/g,""));
+		}
 	},
 	init_notes: function()
 	{
-
+		if(localStorage.getItem("notes") == null)
+			pv.notes.create();
+		pv.notes.fillAll();
 	},
 	init_chem: function()
 	{
@@ -104,6 +120,33 @@ window.pv = window.pv ||
 				pv.emails.setBlock(i,""); //Even though set is deprecated it's more definitive of what we're doing
 			}
 			pv.pushChange("REBUILD","email.create",JSON.parse(old),JSON.parse(pv.getOption("emails")),{"format":"JSON"})
+		},
+		openEmail:function(email)
+		{
+			chrome.tabs.create({url:"mailto:"+email});
+		},
+		events:
+		{
+			click:function(event)
+			{
+				var email = $(this).attr("data-email");
+				email.replace(/mailto:/g,""); //Ensures that adding mailto won't make it mailto:mailto:example@hexr.org
+				if(email.indexOf("#") == 0 || email == "")
+					$("#noEmail").openModal();
+				else pv.emails.openEmail(email);
+			},
+			saveAll: function(event)
+			{
+				event.preventDefault()
+				for(var i = 1; i<=8; i++)
+				{
+					var email = $("#block-"+i+"-email").val();
+					if(email == "" || email == null)
+						email = "#noEmail";
+					pv.emails.updateBlock(i,email);
+				}
+				Materialize.toast("Emails updated!",5000)
+			}
 		}
 	},
 	links:
@@ -118,6 +161,7 @@ window.pv = window.pv ||
 			if(pv.containsDifference(previous,link))
 			{
 				current[block] = link;
+				if(link == "") link = "#noLink";
 				pv.updateOption("links",JSON.stringify(current));
 				pv.pushChange("UPDATE","links.updateBlock",previous,link,{"block":block,"format":"STRING"});
 				return true;
@@ -150,7 +194,43 @@ window.pv = window.pv ||
 				pv.links.setBlock(i,""); //Even though set is deprecated it's more definitive of what we're doing
 			}
 			pv.pushChange("REBUILD","links.create",JSON.parse(old),JSON.parse(pv.getOption("links")),{"format":"JSON"})
-		}
+		},
+		updateLinks: function(prefix,suffix)
+		{
+			prefix = prefix || "#block-";
+			suffix = suffix || "";
+			for(var i = 1 ; i <=8; i++)
+			{
+				$(prefix+i+suffix).attr("data-location",pv.links.getBlock(i));
+			}
+		},
+		events:
+		{
+			saveAll: function(event)
+			{
+				event.preventDefault()
+				for(var i = 1; i<=8; i++)
+				{
+					var link = $("#block-"+i+"-link").val();
+					if(link == "" || link == null)
+						link = "#noLink";
+					pv.links.updateBlock(i,link);
+				}
+				Materialize.toast("Links saved!",5000)
+			},
+			click: function(event)
+			{
+				link = $(this).attr("data-location");
+				console.log(link);
+				if(link.indexOf("#") == 0 || link == "")
+					$("#noLink").openModal();
+				else pv.links.open(link)
+			}
+		},
+		open: function(what)
+		{
+			chrome.tabs.create({url:what});
+		},
 	},
 	notes:
 	{
@@ -196,6 +276,15 @@ window.pv = window.pv ||
 				pv.notes.setBlock(i,""); //Even though set is deprecated it's more definitive of what we're doing
 			}
 			pv.pushChange("REBUILD","notes.create",JSON.parse(old),JSON.parse(pv.getOption("notes")),{"format":"JSON"})
+		},
+		fillAll: function(prefix,suffix)
+		{
+			prefix = prefix || "#block-";
+			suffix = suffix || "-notes";
+			for(var i = 1; i <= 8; i++)
+			{
+				$(prefix+i+suffix).val(pv.notes.getBlock());
+			}
 		}
 	}
 };

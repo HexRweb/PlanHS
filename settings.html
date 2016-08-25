@@ -3,13 +3,14 @@
 	<head>
 		<title>PlanVIEW</title>
 		<style>
-		body{min-width:700px;}
+			body{min-width:700px;}
 		</style>
 		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript" src="js/materialize.min.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<!--<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/init.js" defer></script>
-		<script type="text/javascript" src="js/email.js"></script>
+		<script type="text/javascript" src="js/email.js"></script>-->
+		<script type="text/javascript" src="js/extension.js" defer></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, height=device-height" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -19,15 +20,15 @@
 	<body class="grey darken-3">
 		<header>
 			<nav class="cyan darken-4 lighten-1" role="navigation">
-				<div class="nav-wrapper container">
+				<div class="nav-wrapper container fixed">
 					<a id="logo-container" href="#" class="brand-logo center">PlanVIEW</a>
 					<ul id="nav-mobile" class="side-nav blue-grey">
 						<a class="waves-effect waves-light btn z-depth-5" href="extension.html"><i class="material-icons right">dashboard</i>Home</a>
 						<a class="waves-effect waves-light btn class z-depth-3" id="block-1" ><i class="material-icons right">web</i>1st Block</a>
 						<a class="waves-effect waves-light btn class z-depth-3" id="block-2" ><i class="material-icons right">web</i>2nd Block</a>
-						<a class="waves-effect waves-light btn class z-depth-3" id="block-3" ><i class="material-icons right">web</i>3rd Block</a>
-						<a class="waves-effect waves-light btn class z-depth-3" id="block-4" ><i class="material-icons right">web</i>4th Block</a>
-						<a class="waves-effect waves-light btn class z-depth-3" id="block-5" ><i class="material-icons right">web</i>5th Block</a>
+						<a class="waves-effect waves-light blue-grey btn class z-depth-3" id="block-3" ><i class="material-icons right">web</i>3rd Block</a>
+						<a class="waves-effect waves-light blue-grey btn class z-depth-3" id="block-4" ><i class="material-icons right">web</i>4th Block</a>
+						<a class="waves-effect waves-light blue-grey btn class z-depth-3" id="block-5" ><i class="material-icons right">web</i>5th Block</a>
 						<a class="waves-effect waves-light btn class z-depth-3" id="block-6" ><i class="material-icons right">web</i>6th Block</a>
 						<a class="waves-effect waves-light btn class z-depth-3" id="block-7"><i class="material-icons right">web</i>7th Block</a>
 						<a class="waves-effect waves-light btn class z-depth-3" id="block-8"><i class="material-icons right">web</i>8th Block</a>
@@ -39,80 +40,57 @@
 			</nav>
 		</header>
 		<main class="container section row">
-			<section class="misc section">
-				<div class="row">
-					<div class="input-field col s12">
-						 <input type="checkbox" id="autosave" name="autosave" /><label for="autosave" class="white-text">Autosave notes (when you click away from a note, it automatically saves!)</label>
-					</div>
+			<section class="misc section row">
+				<div class="input-field col s12">
+					 <input type="checkbox" id="autosave" name="autosave" />
+					 <label for="autosave" class="white-text">Autosave notes (when you click away from a note, it automatically saves!)</label>
 				</div>
 			</section>
 			<section class="links section">
-				<form class="row">
-					<h4 class="white-text decorated center">Links Setup</h4>
-					<blockquote class="white-text flow-text">
-						Please fill out all the boxes with links. You can put any link you want.
-					</blockquote>
-					<div class="input-field col l6 s12">
-						<!--1st Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-1-link" type="url" class="validate orange-text text-darken-4 flow-text" >
-								<label for="block-1-link flow-text" class="active">1st Block Website Link</label>
-							</div>
+				<h4 class="white-text decorated center">Links Setup</h4>
+				<blockquote class="white-text flow-text">
+					Please fill out all the boxes with links. You can put any link you want.
+				</blockquote>
+				<form class="orange-text text-darken-4 flow-text">
+					<div class="row">
+						<div class="input-field col s12 m3">
+							<input  id="block-1-link" type="url" class="validate" autocomplete="off" autofocus>
+							<label for="block-1-link">1st Block Website Link</label>
 						</div>
-						<!--2nd Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-2-link" type="url" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-2-link">2nd Block Website Link</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input  id="block-2-link" type="url" class="validate" autocomplete="off">
+							<label for="block-2-link">2nd Block Website Link</label>
 						</div>
-						<!--3rd Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-3-link" type="url" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-3-link">3rd Block Website Link</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input  id="block-3-link" type="url" class="validate" autocomplete="off">
+							<label for="block-3-link">3rd Block Website Link</label>
 						</div>
-						<!--4th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-4-link" type="url" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-4-link">4th Block Website Link</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input  id="block-4-link" type="url" class="validate" autocomplete="off">
+							<label for="block-4-link">4th Block Website Link</label>
 						</div>
 					</div>
-					<div class="input-field col l6 s12">
-						<!--5th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input   id="block-5-link" type="url" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-5-link">5th Block Website Link</label>
-							</div>
+					<div class="row">
+						<div class="input-field col s12 m3">
+							<input   id="block-5-link" type="url" class="validate" autocomplete="off">
+							<label for="block-5-link">5th Block Website Link</label>
 						</div>
-						<!--6th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-6-link" type="url" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-6-link">6th Block Website Link</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input  id="block-6-link" type="url" class="validate" autocomplete="off">
+							<label for="block-6-link">6th Block Website Link</label>
 						</div>
-						<!--7th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-7-link" type="url" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-7-link">7th Block Website Link</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input  id="block-7-link" type="url" class="validate" autocomplete="off">
+							<label for="block-7-link">7th Block Website Link</label>
 						</div>
-						<!--8th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-8-link" type="text" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-8-link">8th Block Website Link</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input id="block-8-link" type="text" class="validate" autocomplete="off">
+							<label for="block-8-link">8th Block Website Link</label>
 						</div>
 					</div>
-					<button class="waves-effect waves-light btn center" id="demo" type="submit">Save</button>
+					<div class="row center">
+						<button class="waves-effect waves-light btn" id="save-links" type="submit">Save</button>
+					</div>
 				</form>
 			</section>
 			<section class="emails section">
@@ -120,74 +98,61 @@
 				<blockquote class="white-text flow-text">
 					Put your teacher's email to quickly email them from the home page.
 				</blockquote>
-				<form class="row">
-					<div class="input-field col l6 s12">
-						<!--1st Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-							<input  id="block-1-email" type="text" class="validate orange-text text-darken-4 flow-text" >
-								<label for="block-1-email"  class="active">1st Block Email</label>
-							</div>
+				<form class=" orange-text text-darken-4 flow-text">
+					<div class="row">
+						<div class="input-field col s12 m3">
+							<input id="block-1-email" type="text" class="validate" autocomplete="off">
+							<label for="block-1-email">1st Block Email</label>
 						</div>
-						<!--2nd Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-2-email" type="text" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-2-email">2nd Block Email</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input id="block-2-email" type="text" class="validate" autocomplete="off">
+							<label for="block-2-email">2nd Block Email</label>
 						</div>
-						<!--3rd Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-3-email" type="text" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-3-email">3rd Block Email</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input id="block-3-email" type="text" class="validate" autocomplete="off">
+							<label for="block-3-email">3rd Block Email</label>
 						</div>
-						<!--4th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-4-email" type="text" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-4-email">4th Block Email</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input id="block-4-email" type="text" class="validate" autocomplete="off">
+							<label for="block-4-email">4th Block Email</label>
 						</div>
 					</div>
-					<div class="input-field col l6 s12">
-						<!--5th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input   id="block-5-email" type="text" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-5-email">5th Block Email</label>
-							</div>
+					<div class="row">
+						<div class="input-field col s12 m3">
+							<input  id="block-5-email" type="text" class="validate" autocomplete="off">
+							<label for="block-5-email">5th Block Email</label>
 						</div>
-						<!--6th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-6-email" type="text" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-6-email">6th Block Email</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input id="block-6-email" type="text" class="validate" autocomplete="off">
+							<label for="block-6-email">6th Block Email</label>
 						</div>
-						<!--7th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-7-email" type="text" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-7-email">7th Block Email</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input id="block-7-email" type="text" class="validate" autocomplete="off">
+							<label for="block-7-email">7th Block Email</label>
 						</div>
-						<!--8th Block Link-->
-						<div class="row">
-							<div class="input-field col s12">
-								<input  id="block-8-email" type="text" class="validate orange-text text-darken-4 flow-text">
-								<label for="block-8-email">8th Block Email</label>
-							</div>
+						<div class="input-field col s12 m3">
+							<input id="block-8-email" type="text" class="validate" autocomplete="off">
+							<label for="block-8-email">8th Block Email</label>
 						</div>
 					</div>
-					<button class="waves-effect waves-light btn center" id="demo1" type="submit">Save</button>
+					<div class="row center">
+						<button class="waves-effect waves-light btn" id="save-emails" type="submit">Save</button>
+					</div>
 				</form>
 			</section>
 		</main>
 		<footer class="grey darken-3 white-text center footer">
 			<p class="flow-text">Made with <a class="pink-text">❤</a> by <a href="https://hexr.org" target="_blank">HexR</a></p>
 		</footer>
-		<script src="js/settings.js"></script>
+		<div id="noLink" class="modal container">
+			<h1>No Link</h1>
+			<p class="flow-text">This block doesn't have a link! You can change this in the <a href="/settings.html#links">settings page</a></p>
+		</div>
+		<div id="noEmail" class="modal container">
+			<h1>No Email</h1>
+			<p class="flow-text">This block doesn't have an email! You can change this in the <a href="/settings.html#emails">settings page</a></p>
+		</div>
+		<!--<script src="js/settings.js"></script>-->
+		<script src="js/init/settings.js" defer></script>
 	</body>
 </html>
