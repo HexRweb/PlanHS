@@ -5,7 +5,7 @@
 - Send error report option
 - Request unlimited storage in LocalStorage
 - Auto update links when links are updated!
-- Add support for calendar
+- ~Add support for calendar~
 - Update all files to use extension.js
 - Unify static content across files
 - Add listeners for save / focus change for notes
