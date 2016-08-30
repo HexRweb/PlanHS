@@ -46,7 +46,18 @@
 					 <label for="autosave" class="white-text">Autosave notes (when you click away from a note, it automatically saves!)</label>
 				</div>
 			</section>
-			<section class="links section">
+			<section class="calendar section row" id="calendars">
+				<form>
+					<div class="input-field col s9">
+						<input type="text" id="calendar" name="calendar" class="grey-text text-lighten-1" />
+						<label for="calendar" class="white-text">Calendar ID (your gMail / Google Apps email address)</label>
+					</div>
+					<div class="input-field col s3 center">
+						<button type="submit" id="calendar-save" class="btn waves-effect waves-effect-light">Save calendar</button>
+					</div>
+				</form>
+			</section>
+			<section class="links section" id="links">
 				<h4 class="white-text decorated center">Links Setup</h4>
 				<blockquote class="white-text flow-text">
 					Please fill out all the boxes with links. You can put any link you want.
@@ -93,7 +104,7 @@
 					</div>
 				</form>
 			</section>
-			<section class="emails section">
+			<section class="emails section" id="emails">
 				<h4 class="white-text decorated center">Email Setup</h4>
 				<blockquote class="white-text flow-text">
 					Put your teacher's email to quickly email them from the home page.

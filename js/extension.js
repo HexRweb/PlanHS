@@ -43,6 +43,14 @@ window.pv = window.pv ||
 		$(".carousel").carousel();
 		if(typeof otherInit === "string" && typeof pv["init_"+otherInit] === "function")
 			pv["init_"+otherInit]();
+		$("a.smoothscroll").click(function(e)
+		{
+			console.log("CLICKED");
+			e.preventDefault();
+			$('html, body').animate({
+				scrollTop: $($(this).attr("href")).offset().top - 70
+			}, 1000);
+		});
 	},
 	init_settings: function()
 	{
@@ -54,6 +62,8 @@ window.pv = window.pv ||
 			$("#block-"+i+"-link").val(pv.links.getBlock(i).replace(/#noLink/g,""));
 			$("#block-"+i+"-email").val(pv.emails.getBlock(i).replace(/#noEmail/g,""));
 		}
+		$("#calendar-save").click(pv.calendar.events.settingsSave);
+		$("#calendar").val(pv.calendar.getID());
 	},
 	init_notes: function()
 	{
@@ -65,10 +75,7 @@ window.pv = window.pv ||
 			pv.emails.create();
 		pv.emails.updateEmails();
 		$(".email").click(pv.emails.events.click);
-	},
-	init_getStarted: function()
-	{
-
+		pv.calendar.pushCalendar("#calendar");
 	},
 	emails:
 	{
@@ -109,7 +116,7 @@ window.pv = window.pv ||
 		create: function()
 		{
 			var old = pv.getOption("emails");
-			pv.updateOption("emails",'{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":""}');
+			pv.updateOption("emails",'{"1":"#noEmail","2":"#noEmail","3":"#noEmail","4":"#noEmail","5":"#noEmail","6":"#noEmail","7":"#noEmail","8":"#noEmail"}');
 			pv.pushChange("REBUILD","email.create",JSON.parse(old),JSON.parse(pv.getOption("emails")),{"format":"JSON"})
 		},
 		openEmail:function(email)
@@ -194,7 +201,7 @@ window.pv = window.pv ||
 		create: function()
 		{
 			var old = pv.getOption("links");
-			pv.updateOption("links",'{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":""}');
+			pv.updateOption("links",'{"1":"#noLink","2":"#noLink","3":"#noLink","4":"#noLink","5":"#noLink","6":"#noLink","7":"#noLink","8":"#noLink"}');
 			for(var i = 1; i <= 8; i++)
 			{
 				pv.links.setBlock(i,""); //Even though set is deprecated it's more definitive of what we're doing
@@ -291,6 +298,45 @@ window.pv = window.pv ||
 		events:
 		{
 			save: function(){},
+		}
+	},
+	calendar:
+	{
+		generateFrame: function(width,height,frameborder,scrolling,id)
+		{
+			width = width || 600;
+			height = height || 500;
+			frameborder = frameborder || 0;
+			scrolling = scrolling || 'no'
+			id = id || pv.calendar.getID();
+			if(id == null || id == "")
+				return "<div class='error center red-text'><h3>Calendar not setup!</h3><p class='flow-text'>You might want to set this up in <a href='/settings.html#calendars' target='_blank'>settings</a>!</p></div>"
+			return "<iframe src='https://calendar.google.com/calendar/embed?src="+id+"' style='border: 0' width='"+width+"' height='"+height+"' frameborder='"+frameborder+"' scrolling='"+scrolling+"'></iframe>"
+		},
+		getID: function()
+		{
+			return pv.getOption("calendar")
+		},
+		setID: function(nu)
+		{
+			var old = pv.calendar.getID();
+			if(nu.indexOf("@") <= 0)
+				nu = nu + "@gmail.com";
+			pv.updateOption("calendar",nu);
+			pv.pushChange("UPDATE", "pv.calendar.setID",old,nu,{"type":"STRING"});
+		},
+		pushCalendar: function(element)
+		{
+			$(element).html(pv.calendar.generateFrame());
+		},
+		events:
+		{
+			settingsSave: function(event)
+			{
+				event.preventDefault();
+				pv.calendar.setID($("#calendar").val());
+				Materialize.toast("Calendar ID saved!",1000);
+			}
 		}
 	},
 	firstRun: function()
