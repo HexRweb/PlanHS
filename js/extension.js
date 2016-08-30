@@ -41,7 +41,6 @@ window.pv = window.pv ||
 		$(".button-collapse").sideNav();
 		$(".class").click(pv.links.events.click);
 		$(".carousel").carousel();
-		//{{IMPLEMENT}}/*$(".class").click()*/
 		if(typeof otherInit === "string" && typeof pv["init_"+otherInit] === "function")
 			pv["init_"+otherInit]();
 	},
@@ -301,5 +300,13 @@ window.pv = window.pv ||
 		{
 			save: function(){},
 		}
+	},
+	firstRun: function()
+	{
+		pv.links.create();
+		pv.emails.create();
+		pv.notes.create();
+		pv.updateOption("autosave",false);
 	}
 };
+chrome.runtime.onInstalled.addListener(pv.firstRun);
