@@ -109,11 +109,7 @@ window.pv = window.pv ||
 		create: function()
 		{
 			var old = pv.getOption("emails");
-			pv.updateOption("emails","{}");
-			for(var i = 1; i <= 8; i++)
-			{
-				pv.emails.setBlock(i,""); //Even though set is deprecated it's more definitive of what we're doing
-			}
+			pv.updateOption("emails",'{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":""}');
 			pv.pushChange("REBUILD","email.create",JSON.parse(old),JSON.parse(pv.getOption("emails")),{"format":"JSON"})
 		},
 		openEmail:function(email)
@@ -198,7 +194,7 @@ window.pv = window.pv ||
 		create: function()
 		{
 			var old = pv.getOption("links");
-			pv.updateOption("links","{}");
+			pv.updateOption("links",'{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":""}');
 			for(var i = 1; i <= 8; i++)
 			{
 				pv.links.setBlock(i,""); //Even though set is deprecated it's more definitive of what we're doing
@@ -280,11 +276,7 @@ window.pv = window.pv ||
 		create: function()
 		{
 			var old = pv.getOption("notes");
-			pv.updateOption("notes","{}");
-			for(var i = 1; i <= 8; i++)
-			{
-				pv.notes.setBlock(i,""); //Even though set is deprecated it's more definitive of what we're doing
-			}
+			pv.updateOption("notes",'{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":""}');
 			pv.pushChange("REBUILD","notes.create",JSON.parse(old),JSON.parse(pv.getOption("notes")),{"format":"JSON"})
 		},
 		fillAll: function(prefix,suffix)
@@ -307,7 +299,6 @@ window.pv = window.pv ||
 		pv.emails.create();
 		pv.notes.create();
 		pv.updateOption("autosave",false);
-		localStorage.setOption("initialized",true);
 		pv.updateOption("initialized",true);
 	}
 };
