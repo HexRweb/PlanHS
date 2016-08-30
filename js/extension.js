@@ -40,7 +40,6 @@ window.pv = window.pv ||
 		pv.links.updateLinks();
 		$(".button-collapse").sideNav();
 		$(".class").click(pv.links.events.click);
-		$(".email").click(pv.links.events.click);
 		$(".carousel").carousel();
 		//{{IMPLEMENT}}/*$(".class").click()*/
 		if(typeof otherInit === "string" && typeof pv["init_"+otherInit] === "function")
@@ -62,14 +61,11 @@ window.pv = window.pv ||
 		if(localStorage.getItem("notes") == null)
 			pv.notes.create();
 		pv.notes.fillAll();
-	},
-	init_chem: function()
-	{
 
-	},
-	init_physics: function()
-	{
-
+		if(localStorage.getItem("emails") == null)
+			pv.emails.create();
+		pv.emails.updateEmails();
+		$(".email").click(pv.emails.events.click);
 	},
 	init_getStarted: function()
 	{
@@ -125,6 +121,18 @@ window.pv = window.pv ||
 		{
 			chrome.tabs.create({url:"mailto:"+email});
 		},
+		updateEmails: function(prefix,suffix)
+		{
+			prefix = prefix || "#block-";
+			suffix = suffix || "-email";
+			for(var i = 1 ; i <=8; i++)
+			{
+				var email = pv.emails.getBlock(i);
+				$(prefix+i+suffix).attr("data-email",email);
+				email = (email.indexOf("#") >= 0) ? "No email set!" : email;
+				$(prefix+i+suffix).attr("title",email);
+			}
+		},
 		events:
 		{
 			click:function(event)
@@ -132,7 +140,10 @@ window.pv = window.pv ||
 				var email = $(this).attr("data-email");
 				email.replace(/mailto:/g,""); //Ensures that adding mailto won't make it mailto:mailto:example@hexr.org
 				if(email.indexOf("#") == 0 || email == "")
+				{
+					event.preventDefault();
 					$("#noEmail").openModal();
+				}
 				else pv.emails.openEmail(email);
 			},
 			saveAll: function(event)
@@ -283,8 +294,12 @@ window.pv = window.pv ||
 			suffix = suffix || "-notes";
 			for(var i = 1; i <= 8; i++)
 			{
-				$(prefix+i+suffix).val(pv.notes.getBlock());
+				$(prefix+i+suffix).val(pv.notes.getBlock(i));
 			}
+		},
+		events:
+		{
+			save: function(){},
 		}
 	}
 };
