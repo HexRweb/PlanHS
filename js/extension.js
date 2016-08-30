@@ -70,11 +70,12 @@ window.pv = window.pv ||
 		if(localStorage.getItem("notes") == null)
 			pv.notes.create();
 		pv.notes.fillAll();
+		pv.notes.addListeners(); //See $(".email").click(...) for why I implemented like this!
 
 		if(localStorage.getItem("emails") == null)
 			pv.emails.create();
 		pv.emails.updateEmails();
-		$(".email").click(pv.emails.events.click);
+		$(".email").click(pv.emails.events.click); //Why did I not create a function like I did for pv.notes.addListeners() to add listeners? Because Email has only one listener while notes have many more (ie focus)
 		pv.calendar.pushCalendar("#calendar");
 	},
 	emails:
@@ -295,9 +296,32 @@ window.pv = window.pv ||
 				$(prefix+i+suffix).val(pv.notes.getBlock(i));
 			}
 		},
+		addListeners: function()
+		{
+			$(".btn-save").click(pv.notes.events.save);
+			if(pv.getOption("autosave") == "true")
+			{
+				$(".materialize-textarea").change(pv.notes.events.save);
+				$(".materialize-textarea").focusout(pv.notes.events.save);
+			}
+		},
 		events:
 		{
-			save: function(){},
+			save: function()
+			{
+				var block = $(this).attr("data-block"), old = pv.notes.getBlock(block), nu = $("#block-"+block+"-notes").val(), buttonClicked  = $(this).hasClass("btn-save");
+				if(!pv.containsDifference(old,nu))
+				{
+					if(buttonClicked)
+						Materialize.toast("Nothing to do here!",500)
+				}
+				else
+				{
+					pv.notes.updateBlock(block,nu);
+					pv.pushChange("UPDATE","pv.notes.events.save",old,nu,{"format":"STRING"});
+					Materialize.toast("Block "+block+" updated!",2500);
+				}
+			},
 		}
 	},
 	calendar:
@@ -323,7 +347,7 @@ window.pv = window.pv ||
 			if(nu.indexOf("@") <= 0)
 				nu = nu + "@gmail.com";
 			pv.updateOption("calendar",nu);
-			pv.pushChange("UPDATE", "pv.calendar.setID",old,nu,{"type":"STRING"});
+			pv.pushChange("UPDATE", "pv.calendar.setID",old,nu,{"format":"STRING"});
 		},
 		pushCalendar: function(element)
 		{

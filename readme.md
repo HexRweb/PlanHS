@@ -8,4 +8,5 @@
 - ~Add support for calendar~
 - Update all files to use extension.js
 - Unify static content across files
-- Add listeners for save / focus change for notes
+- ~Add listeners for save / focus change for notes~
+- Figure out how tabindex should be ordered for email / notes.
