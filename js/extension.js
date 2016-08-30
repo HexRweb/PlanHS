@@ -307,6 +307,8 @@ window.pv = window.pv ||
 		pv.emails.create();
 		pv.notes.create();
 		pv.updateOption("autosave",false);
+		localStorage.setOption("initialized",true);
+		pv.updateOption("initialized",true);
 	}
 };
-chrome.runtime.onInstalled.addListener(pv.firstRun);
+if(!(pv.getOption("initialized") === true)) pv.firstRun();
