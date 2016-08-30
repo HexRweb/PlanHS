@@ -302,4 +302,4 @@ window.pv = window.pv ||
 		pv.updateOption("initialized",true);
 	}
 };
-if(!(pv.getOption("initialized") === true)) pv.firstRun();
+if(!(pv.getOption("initialized") === "true")) pv.firstRun();
