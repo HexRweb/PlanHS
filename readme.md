@@ -7,4 +7,5 @@
 - Auto update links when links are updated!
 - Add support for calendar
 - Update all files to use extension.js
-- Unify headers
+- Unify static content across files
+- Add listeners for save / focus change for notes
