@@ -11,3 +11,6 @@
 - ~~Add listeners for save / focus change for notes~~
 - Figure out how tabindex should be ordered for email / notes.
 - export / import options
+- Add link to mobile app
+- Create project page
+- Setup support
