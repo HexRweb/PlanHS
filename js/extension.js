@@ -39,13 +39,13 @@ window.pv = window.pv ||
 		/*Init functions*/
 		pv.links.updateLinks();
 		$(".button-collapse").sideNav();
+		$(".class").off("click");
 		$(".class").click(pv.links.events.click);
 		$(".carousel").carousel();
 		if(typeof otherInit === "string" && typeof pv["init_"+otherInit] === "function")
 			pv["init_"+otherInit]();
 		$("a.smoothscroll").click(function(e)
 		{
-			console.log("CLICKED");
 			e.preventDefault();
 			$('html, body').animate({
 				scrollTop: $($(this).attr("href")).offset().top - 70
@@ -54,6 +54,8 @@ window.pv = window.pv ||
 	},
 	init_settings: function()
 	{
+		$("#save-links").off("click");
+		$("#save-emails").off("click");
 		$("#save-links").click(pv.links.events.saveAll);
 		$("#save-emails").click(pv.emails.events.saveAll);
 		$("#autosave").change(function(){pv.updateOption("autosave",$(this).is(":checked")); Materialize.toast("Autosave settings updated!",1000);});
@@ -62,6 +64,7 @@ window.pv = window.pv ||
 			$("#block-"+i+"-link").val(pv.links.getBlock(i).replace(/#noLink/g,""));
 			$("#block-"+i+"-email").val(pv.emails.getBlock(i).replace(/#noEmail/g,""));
 		}
+		$("#calendar-save").off("click");
 		$("#calendar-save").click(pv.calendar.events.settingsSave);
 		$("#calendar").val(pv.calendar.getID());
 	},
@@ -298,9 +301,12 @@ window.pv = window.pv ||
 		},
 		addListeners: function()
 		{
+			$(".btn-save").off("click");
 			$(".btn-save").click(pv.notes.events.save);
 			if(pv.getOption("autosave") == "true")
 			{
+				$(".materialize-textarea").off("change");
+				$(".materialize-textarea").off("focusout");
 				$(".materialize-textarea").change(pv.notes.events.save);
 				$(".materialize-textarea").focusout(pv.notes.events.save);
 			}
@@ -317,7 +323,7 @@ window.pv = window.pv ||
 				}
 				else
 				{
-					pv.notes.updateBlock(block,nu);
+					console.log(pv.notes.updateBlock(block,nu));
 					pv.pushChange("UPDATE","pv.notes.events.save",old,nu,{"format":"STRING"});
 					Materialize.toast("Block "+block+" updated!",2500);
 				}
