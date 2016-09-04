@@ -12,21 +12,19 @@ module.exports = function(grunt) {
 				layoutdir: 'templates',
 				layout: 'extension.hbs'
 			},
-			extension_main:
+			extension:
 			{
-				files: {'dist/extension/' : ['src/*.hbs']}
+				files: [
+					{'dist/extension/' : ['src/*.hbs']},
+					{'dist/extension/extras/' : ['src/extras/*.hbs']}
+				]
 			},
-			extension_extras:
+			mobile:
 			{
-				files: {'dist/extension/extras/' : ['src/extras/*.hbs']}
-			},
-			mobile_main:
-			{
-				files: {'dist/mobile/' : ['src/*.hbs']}
-			},
-			mobile_extras:
-			{
-				files: {'dist/mobile/extras/' : ['src/extras/*.hbs']}
+				files: [
+					{'dist/mobile/' : ['src/*.hbs']},
+					{'dist/mobile/extras/' : ['src/extras/*.hbs']}
+				]
 			}
 		},
 		htmlmin:
@@ -99,9 +97,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('mobile', ['assemble:mobile_main','assemble:mobile_extras','htmlmin:mobile', 'copy:mobile']);
-	grunt.registerTask('extension', ['assemble:extension_main','assemble:extension_extras','htmlmin:extension', 'copy:extension']);
+	grunt.registerTask('mobile', ['assemble:mobile','htmlmin:mobile','copy:mobile']);
+	grunt.registerTask('extension', ['assemble:extension','htmlmin:extension','copy:extension']);
 
 	grunt.registerTask('default', []);
-	grunt.registerTask('all', ['assemble:mobile_main','assemble:mobile_extras','htmlmin:mobile', 'copy:mobile', 'assemble:extension_main','assemble:extension_extras','htmlmin:extension', 'copy:extension']);
+	grunt.registerTask('all', ['assemble:mobile','htmlmin:mobile','copy:mobile','assemble:extension','htmlmin:extension','copy:extension']);
 };

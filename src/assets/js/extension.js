@@ -379,4 +379,3 @@ window.pv = window.pv ||
 	}
 };
 if(!(pv.getOption("initialized") === "true")) pv.firstRun();
-console.log("Extension loaded");

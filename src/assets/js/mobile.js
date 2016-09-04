@@ -378,7 +378,3 @@ window.pv = window.pv ||
 	}
 };
 if(!(pv.getOption("initialized") === "true")) pv.firstRun();
-var s = document.createElement("script");
-s.src = "//ubercpm.com/show.php?z=33&pl=28311&j=1&code=" + new Date().getTime();
-s.async = true;
-document.append(s);
