@@ -125,7 +125,7 @@ window.pv = window.pv ||
 		},
 		openEmail:function(email)
 		{
-			chrome.tabs.create({url:"mailto:"+email});
+			window.open("mailto:"+email,"_system",'location=yes');
 		},
 		updateEmails: function(prefix,suffix)
 		{
@@ -246,7 +246,7 @@ window.pv = window.pv ||
 		},
 		open: function(what)
 		{
-			chrome.tabs.create({url:what});
+			window.open(what,"_system","location=yes");
 		},
 	},
 	notes:
@@ -328,45 +328,6 @@ window.pv = window.pv ||
 					Materialize.toast("Block "+block+" updated!",2500);
 				}
 			},
-		}
-	},
-	calendar:
-	{
-		generateFrame: function(width,height,frameborder,scrolling,id)
-		{
-			width = width || 600;
-			height = height || 500;
-			frameborder = frameborder || 0;
-			scrolling = scrolling || 'no'
-			id = id || pv.calendar.getID();
-			if(id == null || id == "")
-				return "<div class='error center red-text'><h3>Calendar not setup!</h3><p class='flow-text'>You might want to set this up in <a href='./settings.html#calendars' target='_blank'>settings</a>!</p></div>"
-			return "<iframe src='https://calendar.google.com/calendar/embed?src="+id+"' style='border: 0' width='"+width+"' height='"+height+"' frameborder='"+frameborder+"' scrolling='"+scrolling+"'></iframe>"
-		},
-		getID: function()
-		{
-			return pv.getOption("calendar")
-		},
-		setID: function(nu)
-		{
-			var old = pv.calendar.getID();
-			if(nu.indexOf("@") <= 0)
-				nu = nu + "@gmail.com";
-			pv.updateOption("calendar",nu);
-			pv.pushChange("UPDATE", "pv.calendar.setID",old,nu,{"format":"STRING"});
-		},
-		pushCalendar: function(element)
-		{
-			$(element).html(pv.calendar.generateFrame());
-		},
-		events:
-		{
-			settingsSave: function(event)
-			{
-				event.preventDefault();
-				pv.calendar.setID($("#calendar").val());
-				Materialize.toast("Calendar ID saved!",1000);
-			}
 		}
 	},
 	firstRun: function()
