@@ -40,7 +40,6 @@ window.pv = window.pv ||
 		$(".button-collapse").sideNav();
 		$(".class").off("click");
 		$(".class").click(pv.links.events.click);
-		$(".carousel").carousel();
 		if(typeof otherInit === "string" && typeof pv["init_"+otherInit] === "function")
 			pv["init_"+otherInit]();
 		$("a.smoothscroll").click(function(e)
@@ -75,6 +74,7 @@ window.pv = window.pv ||
 			pv.emails.create();
 		pv.emails.updateEmails();
 		$(".email").click(pv.emails.events.click); //Why did I not create a function like I did for pv.notes.addListeners() to add listeners? Because Email has only one listener while notes have many more (ie focus)
+
 		$("clearNotes").click(pv.notes.create);
 	},
 	emails:
@@ -121,7 +121,7 @@ window.pv = window.pv ||
 		},
 		openEmail:function(email)
 		{
-			window.open("mailto:"+email,"_system",'location=yes');
+			window.open("mailto:"+email,"_system");
 		},
 		updateEmails: function(prefix,suffix)
 		{
@@ -242,7 +242,7 @@ window.pv = window.pv ||
 		},
 		open: function(what)
 		{
-			window.open(what,"_system","location=yes");
+			window.open(what,"_system");
 		},
 	},
 	notes:

@@ -2,6 +2,7 @@
 init: notes
 ---
 <section class="section util">
+{{#if extension}}
 	<div class="secondary-nav center">
 		<a class="waves-effect waves-light btn center blue-grey" href="./getting-started.html">Get Started</a>
 		<a class="waves-effect waves-light btn blue-grey smoothscroll" href="#calendar">Calendar</a>
@@ -15,6 +16,13 @@ init: notes
 		<li><a href="https://chrome.google.com/webstore/detail/planview/ahdmabmmnnkachilcgkacffibgbgfoln" target="_blank">Chrome</a></li>
 		<li class="divider"></li>
 	</ul>
+{{else}}
+	<div class="secondary-nav center">
+		<a class="waves-effect waves-light btn center blue-grey" href="./getting-started.html">Get Started</a>
+		<a class="waves-effect waves-light btn blue-grey smoothscroll" href="#help">Helpful Links</a>
+		<a class="waves-effect waves-light dropdown-button btn blue-grey" href="./settings.html" target="_blank"><i class="material-icons">settings</i></a>
+	</div>
+{{/if}}
 </section>
 <section class="section notes-container">
 	<h5 class="white-text center decorated">Notes</h5>
@@ -157,6 +165,7 @@ init: notes
 		</div>
 	</div>
 </section>
+{{#if extension}}
 <section class="section calendar">
 	<h5 class="white-text center decorated">Calendar</h5>
 	<div id="calendar"></div>
@@ -174,3 +183,4 @@ init: notes
 		<a target="_blank" class="carousel-item" href="https://drive.google.com/drive/my-drive"><img src="./assets/img/g_drive.jpg"></a>
 	</div>
 </section>
+{{/if}}

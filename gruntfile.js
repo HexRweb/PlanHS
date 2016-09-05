@@ -12,7 +12,9 @@ module.exports = function(grunt) {
 					flatten: true,
 					partials: ['templates/includes/*.hbs'],
 					layoutdir: 'templates',
-					layout: 'extension.hbs'
+					layout: 'extension.hbs',
+					extension: true,
+					mobile: false
 				},
 				files: [
 					{'dist/extension/' : ['src/*.hbs']},
@@ -25,7 +27,9 @@ module.exports = function(grunt) {
 					flatten: true,
 					partials: ['templates/includes/*.hbs'],
 					layoutdir: 'templates',
-					layout: 'mobile.hbs'
+					layout: 'mobile.hbs',
+					extension: false,
+					mobile: true
 				},
 				files: [
 					{'dist/mobile/' : ['src/*.hbs']},
