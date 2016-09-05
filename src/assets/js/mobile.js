@@ -79,6 +79,7 @@ window.pv = window.pv ||
 		pv.emails.updateEmails();
 		$(".email").click(pv.emails.events.click); //Why did I not create a function like I did for pv.notes.addListeners() to add listeners? Because Email has only one listener while notes have many more (ie focus)
 		pv.calendar.pushCalendar("#calendar");
+		$("clearNotes").click(pv.notes.create);
 	},
 	emails:
 	{
@@ -339,7 +340,7 @@ window.pv = window.pv ||
 			scrolling = scrolling || 'no'
 			id = id || pv.calendar.getID();
 			if(id == null || id == "")
-				return "<div class='error center red-text'><h3>Calendar not setup!</h3><p class='flow-text'>You might want to set this up in <a href='/settings.html#calendars' target='_blank'>settings</a>!</p></div>"
+				return "<div class='error center red-text'><h3>Calendar not setup!</h3><p class='flow-text'>You might want to set this up in <a href='./settings.html#calendars' target='_blank'>settings</a>!</p></div>"
 			return "<iframe src='https://calendar.google.com/calendar/embed?src="+id+"' style='border: 0' width='"+width+"' height='"+height+"' frameborder='"+frameborder+"' scrolling='"+scrolling+"'></iframe>"
 		},
 		getID: function()

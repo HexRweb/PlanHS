@@ -80,6 +80,7 @@ window.pv = window.pv ||
 		pv.emails.updateEmails();
 		$(".email").click(pv.emails.events.click); //Why did I not create a function like I did for pv.notes.addListeners() to add listeners? Because Email has only one listener while notes have many more (ie focus)
 		pv.calendar.pushCalendar("#calendar");
+		$("clearNotes").click(pv.notes.create);
 	},
 	emails:
 	{

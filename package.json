@@ -1,7 +1,7 @@
 {
-  "name": "hexr-site-builder",
+  "name": "PlanVIEW",
   "version": "2.2.0",
-  "description": "The builder to create sites for HexR",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,8 @@
     "assemble": "~0.4.37",
     "grunt": "~0.4.3",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-htmlmin": "^2.0.0"
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-htmlmin": "^2.0.0",
+    "grunt-contrib-uglify": "^2.0.0"
   }
 }
