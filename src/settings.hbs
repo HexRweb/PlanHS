@@ -7,6 +7,7 @@ init: settings
 		 <label for="autosave" class="white-text">Autosave notes (when you click away from a note, it automatically saves!)</label>
 	</div>
 </section>
+{{#if extension}}
 <section class="calendar section row" id="calendars">
 	<form>
 		<div class="input-field col s9">
@@ -18,6 +19,7 @@ init: settings
 		</div>
 	</form>
 </section>
+{{/if}}
 <section class="links section" id="links">
 	<h4 class="white-text decorated center">Links Setup</h4>
 	<blockquote class="white-text flow-text">
