@@ -63,9 +63,6 @@ window.pv = window.pv ||
 			$("#block-"+i+"-link").val(pv.links.getBlock(i).replace(/#noLink/g,""));
 			$("#block-"+i+"-email").val(pv.emails.getBlock(i).replace(/#noEmail/g,""));
 		}
-		$("#calendar-save").off("click");
-		$("#calendar-save").click(pv.calendar.events.settingsSave);
-		$("#calendar").val(pv.calendar.getID());
 	},
 	init_notes: function()
 	{
@@ -78,7 +75,6 @@ window.pv = window.pv ||
 			pv.emails.create();
 		pv.emails.updateEmails();
 		$(".email").click(pv.emails.events.click); //Why did I not create a function like I did for pv.notes.addListeners() to add listeners? Because Email has only one listener while notes have many more (ie focus)
-		pv.calendar.pushCalendar("#calendar");
 		$("clearNotes").click(pv.notes.create);
 	},
 	emails:
