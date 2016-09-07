@@ -5,6 +5,23 @@ module.exports = function(grunt) {
 	{
 		assemble:
 		{
+			test:
+			{
+				options:
+				{
+					flatten: true,
+					partials: ['templates/includes/*.hbs'],
+					layoutdir: 'templates',
+					layout: 'extension.hbs',
+					extension: true,
+					mobile: false,
+					order: [5,6,7,8],
+					helpers: ['templates/helpers/*.js']
+				},
+				files: [
+					{'./' : ['templates/test.hbs']},
+				]
+			},
 			extension:
 			{
 				options:
@@ -14,7 +31,9 @@ module.exports = function(grunt) {
 					layoutdir: 'templates',
 					layout: 'extension.hbs',
 					extension: true,
-					mobile: false
+					mobile: false,
+					order: [5,6,7,8],
+					helpers: ['templates/helpers/*.js']
 				},
 				files: [
 					{'dist/extension/' : ['src/*.hbs']},
@@ -29,7 +48,9 @@ module.exports = function(grunt) {
 					layoutdir: 'templates',
 					layout: 'mobile.hbs',
 					extension: false,
-					mobile: true
+					mobile: true,
+					order: [5,5,5,5],
+					helpers: ['templates/helpers/*.js']
 				},
 				files: [
 					{'dist/mobile/' : ['src/*.hbs']},
@@ -148,9 +169,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('mobile', ['assemble:mobile','copy:mobile','htmlmin:mobile','cssmin:mobile','uglify:mobile']);
-	grunt.registerTask('extension', ['assemble:extension','copy:extension','htmlmin:extension','cssmin:extension','uglify:extension']);
+	//grunt.registerTask('mobile', ['assemble:mobile','copy:mobile','htmlmin:mobile','cssmin:mobile','uglify:mobile']);
+	//grunt.registerTask('extension', ['assemble:extension','copy:extension','htmlmin:extension','cssmin:extension','uglify:extension']);
 
-	grunt.registerTask('default', []);
-	grunt.registerTask('all', ['assemble:extension','copy:extension','htmlmin:extension','cssmin:extension','uglify:extension','assemble:mobile','copy:mobile','htmlmin:mobile','cssmin:mobile','uglify:mobile']);
+	grunt.registerTask('default', ["assemble:test"]);
+	//grunt.registerTask('all', ['assemble:extension','copy:extension','htmlmin:extension','cssmin:extension','uglify:extension','assemble:mobile','copy:mobile','htmlmin:mobile','cssmin:mobile','uglify:mobile']);
 };

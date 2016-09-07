@@ -234,7 +234,8 @@ window.pv = window.pv ||
 						link = "#noLink";
 					pv.links.updateBlock(i,link);
 				}
-				Materialize.toast("Links saved!",5000)
+				Materialize.toast("Links saved!",5000);
+				pv.links.updateLinks()
 			},
 			click: function(event)
 			{

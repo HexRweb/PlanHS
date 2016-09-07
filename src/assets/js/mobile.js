@@ -229,12 +229,13 @@ window.pv = window.pv ||
 						link = "#noLink";
 					pv.links.updateBlock(i,link);
 				}
-				Materialize.toast("Links saved!",5000)
+				pv.links.updateLinks()
+				Materialize.toast("Links saved!",5000);
 			},
 			click: function(event)
 			{
+				event.preventDefault();
 				link = $(this).attr("data-location");
-				console.log(link);
 				if(link.indexOf("#") == 0 || link == "")
 					$("#noLink").openModal();
 				else pv.links.open(link)
@@ -326,6 +327,30 @@ window.pv = window.pv ||
 			},
 		}
 	},
+	names:
+	{
+		setName: function(block,name)
+		{
+			var names = JSON.parse(pv.getOption("names")), current = names[block];
+			names[block] = name;
+			pv.updateOption("names",JSON.stringify(names));
+			pv.pushChange("UPDATE","names.setName",current,name,{"FORMAT":"STRING"});
+		},
+		getName: function(block)
+		{
+			return JSON.parse(pv.getOption("names"))[block];
+		},
+		events:
+		{
+			updateAll: function()
+			{
+				for(var i = 1; i <= 8; i++)
+				{
+					
+				}
+			}
+		}
+	}
 	firstRun: function()
 	{
 		pv.links.create();

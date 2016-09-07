@@ -1,0 +1,8 @@
+{{#each order}}
+	<div class="row">
+		{{#each this as |childValue childKey|}}
+			<div class="col s12 {{indexColorClass childValue}}" id="block-{{childValue}}">
+			</div>
+		{{/each}}
+	</div>
+{{/each}}
