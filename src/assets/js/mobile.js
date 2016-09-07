@@ -346,11 +346,11 @@ window.pv = window.pv ||
 			{
 				for(var i = 1; i <= 8; i++)
 				{
-					
+
 				}
 			}
 		}
-	}
+	},
 	firstRun: function()
 	{
 		pv.links.create();
