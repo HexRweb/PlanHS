@@ -30,7 +30,7 @@ init: notes
 			<div class="col s12 m6" id="block-{{this}}">
 				<div class="card {{indexClass this}} darken-3 z-depth-5">
 					<div class="card-content">
-						<p class="card-title bold">{{{addPrefix this}}} Block<a href="" class="email {{indexTextClass this}}" id="block-{{this}}-email"><span class="right material-icons">email</span></a></p>
+						<p class="card-title bold"><span id="title-name">{{{addPrefix this}}} Block</span><a href="" class="email {{indexTextClass this}}" id="block-{{this}}-email"><span class="right material-icons">email</span></a></p>
 						<form class="row">
 							<div class="input-field col s12">
 								<textarea id="block-{{this}}-notes" class="materialize-textarea" data-block="{{this}}"></textarea>

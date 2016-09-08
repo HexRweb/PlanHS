@@ -403,7 +403,7 @@ window.pv = window.pv ||
 				{
 					var name = pv.names.getBlock(i);
 					$("#block-"+i+"-nav").html('<i class="material-icons right">web</i>' + name);
-					$("#block-"+i+" .card-title").html(name);
+					$("#block-"+i+" #title-name").html(name);
 				}
 			},
 			saveAll:function(event)
@@ -438,9 +438,9 @@ window.pv = window.pv ||
 			log = "", create = [];
 			for(requirement in requirements)
 			{
-				if(data[requirement] == null || data[requirement] == "undefined")
+				if(data[requirement.name] == null || data[requirement.name] == "undefined")
 				{
-					log += "NoImport: "+requirement;
+					log += "Unable to import:" + requirement;
 					create.push(requirement);
 				}
 			}

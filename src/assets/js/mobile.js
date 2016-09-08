@@ -358,7 +358,7 @@ window.pv = window.pv ||
 				{
 					var name = pv.names.getBlock(i);
 					$("#block-"+i+"-nav").html('<i class="material-icons right">web</i>' + name);
-					$("#block-"+i+" .card-title").html(name);
+					$("#block-"+i+" #title-name").html(name);
 				}
 			},
 			saveAll:function(event)
