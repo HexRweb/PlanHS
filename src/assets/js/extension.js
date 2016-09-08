@@ -41,7 +41,7 @@ window.pv = window.pv ||
 		$(".button-collapse").sideNav();
 		$(".class").off("click");
 		$(".class").click(pv.links.events.click);
-		$(".carousel").carousel();
+		$(".carousel").carousel({indicators:true});
 		if(typeof otherInit === "string" && typeof pv["init_"+otherInit] === "function")
 			pv["init_"+otherInit]();
 		$("a.smoothscroll").click(function(e)
