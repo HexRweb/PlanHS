@@ -21,6 +21,6 @@
 - Add Favicon
 - Edit Block Names
 - Minor UI Updates
--  Spacing between blocks
--  Scrollbars
--  Settings look nicer
+--  Spacing between blocks
+--  Scrollbars
+--  Settings look nicer
