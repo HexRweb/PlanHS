@@ -14,3 +14,13 @@
 - Add link to mobile app
 - Create project page
 - ~~Setup support~~
+
+##Changelog
+
+1.2
+- Add Favicon
+- Edit Block Names
+- Minor UI Updates
+-  Spacing between blocks
+-  Scrollbars
+-  Settings look nicer
