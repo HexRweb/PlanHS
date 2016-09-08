@@ -20,66 +20,83 @@ init: settings
 	</form>
 </section>
 {{/if}}
-<section class="links section" id="links">
-	<h4 class="white-text decorated center">Links Setup</h4>
-	<blockquote class="white-text flow-text">This is where you can customize the links that show up in the menu. You can put any site you want - like eCampus, moodle, Google Classroom, etc!</blockquote>
-	<form class="orange-text text-darken-4 flow-text">
-		<div class="row">{{#each firstHalf}}
-			<div class="input-field col s12 m3">
-				<input id="block-{{this}}-link" type="url" class="validate" autocomplete="off">
-				<label for="block-{{this}}-link">{{addPrefix this false}} Block Website Link</label>
-			</div>
-		{{/each}}</div>
-		<div class="row">{{#each secondHalf}}
-			<div class="input-field col s12 m3">
-				<input id="block-{{this}}-link" type="url" class="validate" autocomplete="off">
-				<label for="block-{{this}}-link">{{addPrefix this false}} Block Website Link</label>
-			</div>
-		{{/each}}</div>
-		<div class="row center">
-			<button class="waves-effect waves-light btn" id="save-links" type="submit">Save</button>
+<ul class="collapsible" data-collapsible="accordion">
+	<li>
+		<div class="collapsible-header semi-bold flow-text active"><i class="material-icons center">link</i>Links</div>
+		<div class="collapsible-body container">
+			<section class="links section" id="links">
+				<h4 class="white-text decorated center">Links Setup</h4>
+				<blockquote class="white-text flow-text">This is where you can customize the links that show up in the menu. You can put any site you want - like eCampus, moodle, Google Classroom, etc!</blockquote>
+				<form class="orange-text text-darken-4 flow-text">
+					<div class="row">{{#each firstHalf}}
+						<div class="input-field col s12 m3">
+							<input id="block-{{this}}-link" type="url" class="validate" autocomplete="off">
+							<label for="block-{{this}}-link">{{addPrefix this false}} Block Website Link</label>
+						</div>
+					{{/each}}</div>
+					<div class="row">{{#each secondHalf}}
+						<div class="input-field col s12 m3">
+							<input id="block-{{this}}-link" type="url" class="validate" autocomplete="off">
+							<label for="block-{{this}}-link">{{addPrefix this false}} Block Website Link</label>
+						</div>
+					{{/each}}</div>
+					<div class="row center">
+						<button class="waves-effect waves-light btn" id="save-links" type="submit">Save</button>
+					</div>
+				</form>
+			</section>
 		</div>
-	</form>
-</section>
-<section class="emails section" id="emails">
-	<h4 class="white-text decorated center">Email Setup</h4>
-	<blockquote class="white-text flow-text">Put your teacher's email to quickly email them from the home page.</blockquote>
-	<form class=" orange-text text-darken-4 flow-text">
-		<div class="row">{{#each firstHalf}}
-			<div class="input-field col s12 m3">
-				<input id="block-{{this}}-email" type="email" class="validate" autocomplete="off">
-				<label for="block-{{this}}-email">{{addPrefix this false}} Block Email</label>
-			</div>
-		{{/each}}</div>
-		<div class="row">{{#each secondHalf}}
-			<div class="input-field col s12 m3">
-				<input id="block-{{this}}-email" type="email" class="validate" autocomplete="off">
-				<label for="block-{{this}}-email">{{addPrefix this false}} Block Email</label>
-			</div>
-		{{/each}}</div>
-		<div class="row center">
-			<button class="waves-effect waves-light btn" id="save-emails" type="submit">Save</button>
+	</li>
+	<li>
+		<div class="collapsible-header semi-bold flow-text"><i class="material-icons">email</i>Emails</div>
+		<div class="collapsible-body container">
+			<section class="emails section" id="emails">
+				<h4 class="white-text decorated center">Email Setup</h4>
+				<blockquote class="white-text flow-text">Put your teacher's email to quickly email them from the home page.</blockquote>
+				<form class=" orange-text text-darken-4 flow-text">
+					<div class="row">{{#each firstHalf}}
+						<div class="input-field col s12 m3">
+							<input id="block-{{this}}-email" type="email" class="validate" autocomplete="off">
+							<label for="block-{{this}}-email">{{addPrefix this false}} Block Email</label>
+						</div>
+					{{/each}}</div>
+					<div class="row">{{#each secondHalf}}
+						<div class="input-field col s12 m3">
+							<input id="block-{{this}}-email" type="email" class="validate" autocomplete="off">
+							<label for="block-{{this}}-email">{{addPrefix this false}} Block Email</label>
+						</div>
+					{{/each}}</div>
+					<div class="row center">
+						<button class="waves-effect waves-light btn" id="save-emails" type="submit">Save</button>
+					</div>
+				</form>
+			</section>
 		</div>
-	</form>
-</section>
-<section class="names section" id="names">
-	<h4 class="white-text decorated center">Block Names Setup</h4>
-	<blockquote class="white-text flow-text">Make block names nice! Instead of <em>N<sup>th</sup> Block</em>, you can name them things like <em>Chemistry</em> or <em>Calculus</em>!</blockquote>
-	<form class=" orange-text text-darken-4 flow-text">
-		<div class="row">{{#each firstHalf}}
-			<div class="input-field col s12 m3">
-				<input id="block-{{this}}-name" type="text" class="validate" autocomplete="off">
-				<label for="block-{{this}}-name">{{addPrefix this false}} Block Name</label>
-			</div>
-		{{/each}}</div>
-		<div class="row">{{#each secondHalf}}
-			<div class="input-field col s12 m3">
-				<input id="block-{{this}}-name" type="text" class="validate" autocomplete="off">
-				<label for="block-{{this}}-name">{{addPrefix this false}} Block Name</label>
-			</div>
-		{{/each}}</div>
-		<div class="row center">
-			<button class="waves-effect waves-light btn" id="save-names" type="submit">Save</button>
+	</li>
+	<li>
+		<div class="collapsible-header semi-bold flow-text"><i class="material-icons">subject</i>Names</div>
+		<div class="collapsible-body container">
+			<section class="names section" id="names">
+				<h4 class="white-text decorated center">Block Names Setup</h4>
+				<blockquote class="white-text flow-text">Make block names nice! Instead of <em>N<sup>th</sup> Block</em>, you can name them things like <em>Chemistry</em> or <em>Calculus</em>!</blockquote>
+				<form class=" orange-text text-darken-4 flow-text">
+					<div class="row">{{#each firstHalf}}
+						<div class="input-field col s12 m3">
+							<input id="block-{{this}}-name" type="text" class="validate" autocomplete="off">
+							<label for="block-{{this}}-name">{{addPrefix this false}} Block Name</label>
+						</div>
+					{{/each}}</div>
+					<div class="row">{{#each secondHalf}}
+						<div class="input-field col s12 m3">
+							<input id="block-{{this}}-name" type="text" class="validate" autocomplete="off">
+							<label for="block-{{this}}-name">{{addPrefix this false}} Block Name</label>
+						</div>
+					{{/each}}</div>
+					<div class="row center">
+						<button class="waves-effect waves-light btn" id="save-names" type="submit">Save</button>
+					</div>
+				</form>
+			</section>
 		</div>
-	</form>
-</section>
+	</li>
+</ul>

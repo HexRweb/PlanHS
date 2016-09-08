@@ -7,6 +7,7 @@ nav a.button-collapse{display: block}
 .decorated:before{content:"";display:block;position:absolute;z-index:-1;top:4px;bottom:4px;left:0;right:0;border-top:2px solid teal;border-bottom:2px solid teal;}
 .underline{text-decoration:underline}
 .bold{font-weight:700 !important}
+.semi-bold{font-weight:400 !important}
 ::-webkit-scrollbar
 {
     width: 13px;

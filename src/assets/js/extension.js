@@ -421,6 +421,20 @@ window.pv = window.pv ||
 			}
 		}
 	},
+	settings:
+	{
+		import: function(data)
+		{
+			var requirements = ['autosave','initialized','emails','links','names','calendar'],
+			log = "", create = [];
+			for(requirement in requirements)
+			{
+				if(data[requirement] == null || data[requirement] == "undefined")
+					log += ""
+			}
+		},
+		export: function(){}
+	},
 	firstRun: function()
 	{
 		pv.links.create();
