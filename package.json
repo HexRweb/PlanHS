@@ -15,7 +15,6 @@
   "author": "HexR",
   "license": "ISC",
   "devDependencies": {
-    "airbrake-js": "^0.5.9",
     "assemble": "~0.4.37",
     "grunt": "~0.4.3",
     "grunt-contrib-copy": "^1.0.0",
