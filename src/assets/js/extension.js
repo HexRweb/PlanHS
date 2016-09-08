@@ -66,7 +66,7 @@ window.pv = window.pv ||
 		{
 			$("#block-"+i+"-link").val(pv.links.getBlock(i).replace(/#noLink/g,""));
 			$("#block-"+i+"-email").val(pv.emails.getBlock(i).replace(/#noEmail/g,""));
-			$("#block-"+i+"-name").val(pv.names.getBlock(i));
+			$("#block-"+i+"-name").val(pv.names.getBlock(i).replace(/<sup>/g,"").replace(/<\/sup>/g,""));
 		}
 		$("#calendar-save").off("click");
 		$("#calendar-save").click(pv.calendar.events.settingsSave);
