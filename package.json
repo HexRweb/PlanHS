@@ -1,14 +1,21 @@
 {
   "name": "PlanVIEW",
-  "version": "2.2.0",
+  "version": "1.2.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hexrweb/planview"
+  },
+  "bugs": {
+    "url": "https://github.com/hexrweb/planview/issues"
   },
   "author": "HexR",
   "license": "ISC",
   "devDependencies": {
+    "airbrake-js": "^0.5.9",
     "assemble": "~0.4.37",
     "grunt": "~0.4.3",
     "grunt-contrib-copy": "^1.0.0",
