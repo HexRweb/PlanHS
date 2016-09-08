@@ -51,6 +51,7 @@ window.pv = window.pv ||
 				scrollTop: $($(this).attr("href")).offset().top - 70
 			}, 1000);
 		});
+		pv.names.events.updateAll();
 	},
 	init_settings: function()
 	{
@@ -371,11 +372,44 @@ window.pv = window.pv ||
 			}
 		}
 	},
+	names:
+	{
+		setName: function(block,name)
+		{
+			var names = JSON.parse(pv.getOption("names")), current = names[block];
+			names[block] = name;
+			pv.updateOption("names",JSON.stringify(names));
+			pv.pushChange("UPDATE","names.setName",current,name,{"FORMAT":"STRING"});
+		},
+		getName: function(block)
+		{
+			return JSON.parse(pv.getOption("names"))[block];
+		},
+		create: function()
+		{
+			var old = pv.getOption("names");
+			pv.updateOption("names",'{"1":"1<sup>st</sup> Block","2":"2<sup>nd</sup> Block","3":"3<sup>rd</sup> Block","4":"4<sup>th</sup> Block","5":"5<sup>th</sup> Block","6":"6<sup>th</sup> Block","7":"7<sup>th</sup> Block","8":"8<sup>th</sup> Block"}');
+			pv.pushChange("REBUILD","names.create",JSON.parse(old),JSON.parse(pv.getOption("names")),{"format":"JSON"})
+		},
+		events:
+		{
+			updateAll: function()
+			{
+				for(var i = 1; i <= 8; i++)
+				{
+					var name = pv.names.getName(i);
+					$("#block-"+i+"-nav").html(name);
+					$("#block-"+i+" .card-title").html(name);
+				}
+			}
+		}
+	},
 	firstRun: function()
 	{
 		pv.links.create();
 		pv.emails.create();
 		pv.notes.create();
+		pv.names.create();
 		pv.updateOption("autosave",false);
 		pv.updateOption("initialized",true);
 	}
