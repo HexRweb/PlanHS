@@ -1,9 +1,11 @@
 module.exports.addPrefix = function(number,sup)
 {
-	sup = sup || true;
+	sup = (typeof sup == "boolean") ? sup : true;
 	var prefix = "", suffix ="";
-	if(sup)
+	if(sup == true)
+	{
 		prefix="<sup>",suffix="</sup>";
+	}
 	if(number > 3)
 		return number + prefix + "th" + suffix;
 	switch(number)

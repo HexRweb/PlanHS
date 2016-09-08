@@ -57,13 +57,16 @@ window.pv = window.pv ||
 	{
 		$("#save-links").off("click");
 		$("#save-emails").off("click");
+		$("#save-names").off("click");
 		$("#save-links").click(pv.links.events.saveAll);
 		$("#save-emails").click(pv.emails.events.saveAll);
+		$("#save-names").click(pv.names.events.saveAll);
 		$("#autosave").change(function(){pv.updateOption("autosave",$(this).is(":checked")); Materialize.toast("Autosave settings updated!",1000);});
 		for(var i = 1; i <=8; i++)
 		{
 			$("#block-"+i+"-link").val(pv.links.getBlock(i).replace(/#noLink/g,""));
 			$("#block-"+i+"-email").val(pv.emails.getBlock(i).replace(/#noEmail/g,""));
+			$("#block-"+i+"-name").val(pv.names.getBlock(i));
 		}
 		$("#calendar-save").off("click");
 		$("#calendar-save").click(pv.calendar.events.settingsSave);
@@ -374,14 +377,14 @@ window.pv = window.pv ||
 	},
 	names:
 	{
-		setName: function(block,name)
+		setBlock: function(block,name)
 		{
 			var names = JSON.parse(pv.getOption("names")), current = names[block];
 			names[block] = name;
 			pv.updateOption("names",JSON.stringify(names));
-			pv.pushChange("UPDATE","names.setName",current,name,{"FORMAT":"STRING"});
+			pv.pushChange("UPDATE","names.setBlock",current,name,{"FORMAT":"STRING"});
 		},
-		getName: function(block)
+		getBlock: function(block)
 		{
 			return JSON.parse(pv.getOption("names"))[block];
 		},
@@ -397,10 +400,24 @@ window.pv = window.pv ||
 			{
 				for(var i = 1; i <= 8; i++)
 				{
-					var name = pv.names.getName(i);
-					$("#block-"+i+"-nav").html(name);
+					var name = pv.names.getBlock(i);
+					$("#block-"+i+"-nav").html('<i class="material-icons right">web</i>' + name);
 					$("#block-"+i+" .card-title").html(name);
 				}
+			},
+			saveAll:function(event)
+			{
+				event.preventDefault()
+				for(var i = 1; i<=8; i++)
+				{
+					var name = $("#block-"+i+"-name").val();
+					if(!(name == "" || name == null))
+					{
+						pv.names.setBlock(i,name);
+					}
+				}
+				pv.names.events.updateAll();
+				Materialize.toast("Block Names updated!",2500);
 			}
 		}
 	},

@@ -16,7 +16,9 @@ module.exports = function(grunt) {
 					extension: true,
 					mobile: false,
 					order: [[1,5],[2,6],[3,7],[4,8]],
-					helpers: ['templates/helpers/*.js']
+					helpers: ['templates/helpers/*.js'],
+					firstHalf: [1,2,3,4],
+					secondHalf: [5,6,7,8]
 				},
 				files: [
 					{'dist/extension/' : ['src/*.hbs']},
@@ -33,7 +35,9 @@ module.exports = function(grunt) {
 					extension: false,
 					mobile: true,
 					order: [[1,2],[3,4],[5,6],[7,8]],
-					helpers: ['templates/helpers/*.js']
+					helpers: ['templates/helpers/*.js'],
+					firstHalf: [1,2,3,4],
+					secondHalf: [5,6,7,8]
 				},
 				files: [
 					{'dist/mobile/' : ['src/*.hbs']},
