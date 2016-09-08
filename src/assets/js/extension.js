@@ -220,7 +220,7 @@ window.pv = window.pv ||
 		updateLinks: function(prefix,suffix)
 		{
 			prefix = prefix || "#block-";
-			suffix = suffix || "";
+			suffix = suffix || "-nav";
 			for(var i = 1 ; i <=8; i++)
 			{
 				$(prefix+i+suffix).attr("data-location",pv.links.getBlock(i));
@@ -243,6 +243,7 @@ window.pv = window.pv ||
 			},
 			click: function(event)
 			{
+				console.log($(this));
 				link = $(this).attr("data-location");
 				console.log(link);
 				if(link.indexOf("#") == 0 || link == "")
@@ -425,12 +426,23 @@ window.pv = window.pv ||
 	{
 		import: function(data)
 		{
-			var requirements = ['autosave','initialized','emails','links','names','calendar'],
+			//var requirements = ['autosave','initialized','emails','links','names','calendar','notes'],
+			var requirements = [{name:'autosave',type:'boolean'},
+			{name:'initialized',type:'boolean'},
+			{name:'emails',type:'object'},
+			{name:'links',type:'object'},
+			{name:'names',type:'object'},
+			{name:'calendar',type:'string'},
+			{name:'notes',type:'object'}]
+			,
 			log = "", create = [];
 			for(requirement in requirements)
 			{
 				if(data[requirement] == null || data[requirement] == "undefined")
-					log += ""
+				{
+					log += "NoImport: "+requirement;
+					create.push(requirement);
+				}
 			}
 		},
 		export: function(){}
